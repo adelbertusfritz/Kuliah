@@ -1,0 +1,7 @@
+1. Focusses on input and ouput.
+2. Everything are functions. All object oriented proggraming, in functional programming are functions.
+3. Every function is one parameter, A function with a lot of parameter can be build up from a function with 1 parameter.
+4. Partial Application, this concept simplify writing code and making it clean
+5. Monads, prevents the pyramid of doom
+6. Options, makes documentation easier to read
+7. Monoids, a combination of monoids are also monoids

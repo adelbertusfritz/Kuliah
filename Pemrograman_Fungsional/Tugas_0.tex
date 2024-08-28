@@ -1,0 +1,86 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={6in, 8in},
+ }
+\usepackage{graphicx}
+\input{../packages.tex}
+
+\title{Tugas 0}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{Tugas 0: Pemrograman Fungsional}
+\end{flushright}
+
+Judul: \href{{https://www.youtube.com/watch?v=E8I19uA-wGY&list=RDQMz2xSS6pH_wo&start_radio=1}}
+{Functional Programming Design Patterns by Scott Wlaschin}\\
+
+Pemrograman fungsional (FP) adalah paradigma pemrograman yang menekankan 
+evaluasi fungsi matematis dan menghindari perubahan status dan data yang 
+dapat diubah. Pemrograman fungsional fokus pada prinsip fungsi murni dan 
+immutabilitas yang menjadikannya pendekatan baik untuk menulis 
+\textit{clean  code}. Beberapa poin yang ingin disampaikan sebagai berikut:
+
+\begin{enumerate}
+    \item \textbf{Fokus pada Input dan Output}
+
+    Inti dari pemrograman fungsional adalah penekanan pada input dan output. 
+    Dalam FP, fungsi dirancang untuk menerima input dan menghasilkan 
+    output tanpa efek samping. Ini berarti bahwa dengan input yang 
+    sama, sebuah fungsi akan selalu menghasilkan output yang sama, membuat 
+    perilaku program lebih dapat diprediksi dan lebih mudah untuk \textit{debug}. 
+    Ketiadaan efek samping memastikan bahwa status sistem tetap konsisten.
+    \item \textbf{Semuanya adalah Fungsi}
+
+    Dalam pemrograman fungsional, segala sesuatu diperlakukan sebagai fungsi. 
+    Sementara pemrograman berorientasi objek (OOP) dibangun di sekitar konsep 
+    objek dan metode, FP menyederhanakan ini dengan memperlakukan objek 
+    sebagai fungsi. Alih-alih memiliki objek dengan metode yang mengubah 
+    status, FP mendorong penggunaan fungsi murni yang menerima input dan 
+    mengembalikan output tanpa mengubah status eksternal apa pun.
+
+    \item \textbf{Fungsi dibuat Satu Parameter}
+
+    Prinsip utama dalam pemrograman fungsional adalah bahwa setiap fungsi 
+    sebaiknya menerima hanya satu parameter. Sebuah fungsi yang 
+    menerima tiga parameter dapat diubah menjadi serangkaian tiga fungsi, 
+    masing-masing menerima satu parameter. Pendekatan ini tidak hanya 
+    menyederhanakan komposisi fungsi tetapi juga membuat kode lebih modular 
+    dan dapat digunakan kembali.
+
+    \item \textbf{Monad: Mencegah Pyramid of Doom}
+
+    Monad adalah konsep fundamental dalam pemrograman fungsional yang 
+    membantu mengelola efek samping dan mengontrol alur. Salah satu masalah 
+    umum dalam pemrograman adalah "pyramid of doom," di mana callback 
+    bersarang menyebabkan kode yang dalam dan sulit dibaca. Monad 
+    menyelesaikan masalah ini dengan memungkinkan pengembang untuk merangkai 
+    operasi dalam cara yang linear dan dapat dibaca.
+
+    \item \textbf{Option: Meningkatkan Keterbacaan dan Dokumentasi}
+
+    Dalam pemrograman fungsional, konsep \textit{option} dipakai
+    untuk merepresentasikan nilai yang mungkin ada atau tidak ada. Daripada 
+    menggunakan nilai null, yang dapat menyebabkan kesalahan runtime jika 
+    tidak ditangani dengan baik, \textit{option} menyediakan cara aman untuk 
+    menangani nilai opsional. Ini tidak hanya mencegah \textit{bug} umum 
+    tetapi juga membuat dokumentasi lebih mudah dibaca. Dengan menunjukkan 
+    dengan jelas nilai mana yang opsional, \textit{option} meningkatkan 
+    kejelasan kode dan memudahkan pengembang lain untuk memahami maksud di 
+    baliknya.
+
+    \item \textbf{Monoid: Komposabilitas dan Kesederhanaan}
+
+    Dalam pemrograman fungsional, monoid digunakan untuk memodelkan suatu 
+    operasi yang dapat digabungkan bersama. Sifat kunci dari monoid adalah 
+    bahwa kombinasi dari monoid juga merupakan monoid, yang memungkinkan 
+    komposisi fungsi dan operasi yang mudah. Ini menyederhanakan proses 
+    pengembangan dan menghasilkan kode yang lebih modular. Monoid sangat 
+    berguna dalam skenario di mana beberapa operasi perlu digabungkan.
+\end{enumerate}
+\end{document}
