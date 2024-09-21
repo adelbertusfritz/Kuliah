@@ -1,0 +1,150 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{Responsi 1 - Analisis 1}
+\subtitle{Bilangan Riil - Part 1}
+\date[]{2024/2025}
+\author[Fritz]{Fritz Adelbertus Sitindaon}
+
+\usetheme{fritz}
+\input{../../package.tex}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\begin{frame}{Sifat Aljabar $\R$}
+    \begin{tcolorbox}[enhanced,title=Penjumlahan, frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item Komutatif: $\forall a,b \in \R, a+b=b+a$.
+            \item Asosiatif: $\forall a,b,c \in \R, (a+b)+c=a+(b+c)$.
+            \item Unit: $\exists 0 \in R \ni \forall a \in R, a+0=0+a=a$.
+            \item Invers: $\forall a \in \R, \exists -a \in R \ni a + (-a) = (-a) + a = 0$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Sifat Aljabar $\R$}
+    \begin{tcolorbox}[enhanced,title=Perkalian, frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item Komutatif: $\forall a,b \in \R, a \cdot b=b \cdot a$.
+            \item Asosiatif: $\forall a,b,c \in \R, (a \cdot b) \cdot c=a \cdot (b \cdot c)$.
+            \item Unit: $\exists 1 \in R \ni \forall a \in R, a \cdot 1=1 \cdot a=a$.
+            \item Invers: $\forall a \in \R, \exists 1/a \in R \ni a \cdot 1/a = 1/a \cdot a = 1$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Sifat Aljabar $\R$}
+    \begin{tcolorbox}[enhanced,title=Distributif, frame style tile={width=\paperwidth}{\wallpaper}]
+        $\forall a,b,c \in R$
+        \begin{itemize}
+            \item $a \cdot (b+c) = (a \cdot b) + (a \cdot c)$.
+            \item $(b+c) \cdot a = (b \cdot a) + (c \cdot a)$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Sifat Keterurutan $\R$}
+    \begin{tcolorbox}[enhanced,title=Bilangan Positif $\P$, frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item Jika $a,b \in \P$, maka $a+b \in \P$.
+            \item Jika $a,b \in \P$, maka $a\cdot b \in \P$.
+            \item Jika $a \in \R$, maka $a \in \P$ atau $-a \in \P$ atau $a=0$.
+        \end{itemize}
+    \end{tcolorbox}
+    \begin{tcolorbox}[enhanced,title=Definisi 2.1.6, frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item $a-b \in P$ dapat ditulis $a > b$ atau $b < a$.
+            \item $a-b \in P \cup {0}$ dapat ditulis $a \geq b$ atau $b \geq a$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Familiar}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.1.7, frame style tile={width=\paperwidth}{\wallpaper}]
+        $\forall a,b,c \in \R$
+        \begin{itemize}
+            \item Jika $a > b$ dan $b > c$, maka $a > c$.
+            \item Jika $a > b$ maka $a+c > b+c$.
+            \item Jika Jika $a > b$ dan $c > 0$, maka $ca > cb$.\\
+            Jika $a > b$ dan $c < 0$, maka $ca < cb$.
+        \end{itemize}
+    \end{tcolorbox}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.1.10, frame style tile={width=\paperwidth}{\wallpaper}]
+        Jika $ab > 0$, maka
+        \begin{itemize}
+            \item $a > 0$ dan $b > 0$, atau
+            \item $a < 0$ dan $b < 0$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Spesial}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.1.9, frame style tile={width=\paperwidth}{\wallpaper}]
+        Jika $a \in \R$ dan $\forall \epsilon > 0, 0 \leq a < \epsilon$, maka $a=0$.
+    \end{tcolorbox}
+    \begin{tcolorbox}[enhanced,title=Ketaksamaan Bernouli, frame style tile={width=\paperwidth}{\wallpaper}]
+        Jika $x > -1$, maka $(1+x)^n \geq 1 +nx \quad \forall n \in \N$.
+    \end{tcolorbox}
+    \begin{itemize}
+        \item Teorema 2.1.9 dapat digunakan untuk membuktikan 2 bilangan sama dan sering digunakan 
+        di materi selanjutnya.
+        \item Ketaksamaan Bernouli suka muncul di pembuktian yang tidak diduga.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Teorema Lain}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.1.2 (Terkait Unit), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item Jika $z,a \in \R$ dan $z+a=a$, maka $z=0$.
+            \item Jika $u,b \in \R$, $u,b \neq 0$ dan $u \cdot b = b$, maka $u = 1$.
+            \item Jika $a \in \R$, maka $a \cdot 0 = 0$.
+        \end{itemize}
+    \end{tcolorbox}
+    \begin{itemize}
+        \item Teorema ini menjelaskan bahwa hanya ada satu elemen di $\R$ yang
+        menjadi elemen unit dalam operasi penjumlahan dan perkalian.
+        \item Poin terakhir memberikan pengecualian untuk nilai $0$.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Teorema Lain}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.1.3 (Terkait Invers), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{itemize}
+            \item Jika $a,b \in \R$, $a \neq 0$ dan $a \cdot b = 1$, maka $b = 1/a$.
+            \item Jika $a \cdot b = 0$, maka $a = 0$ atau $b = 0$.
+        \end{itemize}
+    \end{tcolorbox}
+    \begin{itemize}
+        \item Teorema ini menjelaskan bahwa setiap bilangan di $\R$ punya tepat satu invers terhadap operasi perkalian.
+        \item Poin terakhir memberikan pengecualian untuk nilai $0$.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame} 
+\frametitle{Sifat Aljabar $\R$} 
+\begin{theorem}
+There is no largest prime number. \end{theorem} 
+\begin{enumerate} 
+\item<1-| alert@1> Suppose $p$ were the largest prime number. 
+\item<2-> Let $q$ be the product of the first $p$ numbers. 
+\item<3-> Then $q+1$ is not divisible by any of them. 
+\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+number not in the first $p$ numbers.
+\end{enumerate}
+\end{frame}
+
+
+
+
+
+\end{document}
