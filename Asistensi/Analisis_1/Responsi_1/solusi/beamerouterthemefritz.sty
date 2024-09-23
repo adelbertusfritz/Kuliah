@@ -1,0 +1,19 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{fritz}[1][]
+{
+    \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+        \begin{blur}[sharp corners,spread upwards,frame hidden,boxrule=0pt,before skip=0pt,halign=center]
+            \usebeamercolor{frametitle}\color{fg}
+            \ifx\insertframesubtitle\@empty%
+                {\insertframetitle}
+                \else%
+                {{\insertframetitle\\\insertframesubtitle}}%
+            \fi
+        \end{blur}
+    \end{beamercolorbox}
+
+}
+
+\mode<all>
