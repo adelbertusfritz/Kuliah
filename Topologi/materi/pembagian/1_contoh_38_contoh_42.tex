@@ -1,3 +1,4 @@
+\section*{Closed Subset}
 \begin{frame}{Closed Subset}
     \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
         Subset $A$ dari ruang topologi $(\nX, \nT)$ tertutup jika $\nX - A$ komplemennya terbuka.
@@ -107,11 +108,181 @@
 \end{frame}
 
 \begin{frame}{Teorema Closed Subset}
-    \begin{tcolorbox}[enhanced,title=Teorema 1.18, frame style tile={width=\paperwidth}{\wallpaper}]
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
         $(\nX,\nT)$ adalah ruang topologi
         \begin{enumerate}
             \item $\nX$ tertutup karena $\nX-\nX = \emptyset \in \nT$, terbuka.\\
             $\emptyset$ tertutup karena $\nX-\emptyset = \nX \in \nT$, terbuka.
+            \item Diberikan ${A_1,A_2,\dots,A_n}=\nA$ dengan $A_i$ tertutup, $i=1,2,\dots,n$.
+            Adib $\bigcup\{A:A\in\nA\}$ tertutup.
         \end{enumerate}
     \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Karena $A_1,\dots,A_n$ tertutup, maka $\nX-A_1,\dots,\nX-A_n$ terbuka.  
+            \begin{align*}
+                &\nX-A_1,\dots,\nX-A_n \in \nT\\
+                &\text{dengan sifat 2 ruang topologi}\\
+                \Longrightarrow&\nX-A_1\cap\dots\cap\nX-A_n \in \nT\\
+                \iff&(\nX\cap \comp{A_1})\cap\dots\cap(\nX\cap \comp{A_n})\in \nT\\
+                \iff&\nX\cap \comp{A_1}\cap \comp{A_2}\cap\dots\cap \comp{A_n}\in \nT\\
+                \iff&\nX-\comp{\oio*{\comp{A_1}\cap \comp{A_2}\cap\dots\cap \comp{A_n}}}\in\nT\\
+                \iff&\nX-\oio*{A_1\cup A_2\cup\dots\cup A_n}\in\nT\\
+                \iff&\nX-\bigcup\{A:A\in\nA\}\in\nT
+            \end{align*}
+            Maka $\bigcup\{A:A\in\nA\}$ tertutup.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Diberikan $\forall A\in\nA$ dengan $A$ tertutup.
+            Adib $\bigcap\{A:A\in\nA\}$ tertutup.\\
+            Karena $A$ tertutup $\forall A \in \nA$, maka $\nX-A$ terbuka $\forall A\in \nA$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Karena $A$ tertutup $\forall A \in \nA$, maka $\nX-A$ terbuka $\forall A\in \nA$.
+        \begin{align*}
+            &\nX-A \in \nT, \forall A\in \nA\\
+            &\text{sifat 3 ruang topologi}\\
+            \Longrightarrow& \bigcup\{\nX-A: A\in \nA\}\in \nT\\
+            \iff &\bigcup\{\nX\cap \comp{A}:A\in\nA\}\in \nT\\
+            \iff &\nX\cap\bigcup\{\comp{A}:A\in\nA\}\in \nT\\
+            \iff &\nX-\comp{\bigcup\{\comp{A}:A\in\nA\}}\in \nT\\
+            \iff &\nX-\bigcap\{A:A\in\nA\}\in \nT
+        \end{align*}
+        Maka $\bigcap\{A:A\in\nA\}$ tertutup.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Subset yang Tidak Terbuka Maupun Tertutup}
+    \begin{tcolorbox}[enhanced,title=Contoh 40(a), frame style tile={width=\paperwidth}{\wallpaper}]
+        Terhadap \textit{usual topology} di $\R$, jika $a,b\in\R$, dan $a<b$,
+        maka $\cio{a,b}$ bukan subset terbuka maupun tertutup.
+    \end{tcolorbox}
+    Analisa:\\
+    Jelas $\cio{a,b}$ tidak terbuka karena tidak terdapat $c,d\in\R$ sehingga
+    $\cio{a,b} = \oio{c,d}$.\\
+    Lalu $\cio{a,b}$ tidak tertutup karena $\R-\cio{a,b} = \oio{-\infty,a}\cup\cio{b,\infty}$ 
+    tidak terbuka.
+\end{frame}
+
+\begin{frame}{Contoh Subset yang Terbuka Juga Tertutup}
+    \begin{tcolorbox}[enhanced,title=Contoh 40(b), frame style tile={width=\paperwidth}{\wallpaper}]
+        Terhadap \textit{lower-limit topology} di $\R$, jika $a,b\in\R$, dan $a<b$,
+        maka $\cio{a,b}$ subset terbuka juga tertutup.
+    \end{tcolorbox}
+    Analisa:\\
+    Setiap himpunan buka untuk \textit{lower-limit topology} di $R$ berbentuk $\cio{x,y}$
+    dengan $x < y$ dan $x,y\in R$. Maka $\cio{a,b}\in \nT$ dan $\cio{a,b}$ terbuka.\\
+    Lalu $\cio{a,b}$ tertutup karena $\R-\cio{a,b} = \oio{-\infty,a}\cup\cio{b,\infty}\in\nT$ 
+    sehingga $\R-\cio{a,b}$ terbuka.
+\end{frame}
+
+\section*{Closure}
+\begin{frame}{Closure}
+    \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
+        \textit{Closure} $\comp{A}$ dari subset $A$ dari ruang topologi $(\nX,\nT)$, 
+        adalah irisan \textbf{himpunan tertutup yang mengandung A}.
+    \end{tcolorbox}
+Catatan:\\
+Ini berarti closure $\comp{A}$ adalah himpunan tertutup "terkecil" yang mengandung $A$. 
+Sehingga untuk sembarang $B$ dengan $A\subseteq B$, berlaku juga $\comp{A} \subseteq B$.\\
+Berdasarkan teorema 1.18, $\comp{A}$ adalah himpunan tertutup juga.
+\end{frame}
+
+\begin{frame}{Teorema Closure}
+Bagaimana cara menentukan suatu elemen di $\nX$ juga elemen di $\comp{A}$?  
+\begin{tcolorbox}[enhanced,title=Teorema 1.19, frame style tile={width=\paperwidth}{\wallpaper}]
+    Misalkan $A$ subset dari ruang topologi $(\nX,\nT)$, dan $x\in \nX$.
+    Maka $x\in\comp{A}$ jikka setiap lingkungan dari $x$ tidak kosong ketika diiriskan dengan $A$.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closure} 
+    \begin{tcolorbox}[enhanced,title=Teorema 1.19 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\Rightarrow)$ Asumsikan $x\notin \comp{A}$ dan irisan sembarang lingkungan dari $x$ dan $A$ tak kosong.\\
+        \begin{itemize}
+            \item Karena $x\notin \comp{A}$, maka terdapat $C=\comp{A}$, sehingga $A\subseteq C$ dan $x\notin C$. 
+            \item Maka $\nX-C$ terbuka dan $x\in \nX-C$.
+            \item Sehingga $\nX-C$ adalah lingkungan dari $x$ dengan $\nX-C \cap A = \emptyset$ (ingat $A\subseteq C$).
+        \end{itemize}
+        
+        Ini berkontradiksi dengan asumsi.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closure} 
+    \begin{tcolorbox}[enhanced,title=Teorema 1.19 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\Leftarrow)$ Asumsikan $x\in \comp{A}$ dan terdapat irisan lingkungan dari $x$ dan $A$ yang kosong.
+        \begin{itemize}
+            \item Misalkan irisan lingkungan $x$ dengan $A$ yang kosong tersebut adalah $U$.
+            \item Karena $U$ lingkungan dari $x$ maka $x \in U$ dan $U$ terbuka.
+            \item $U$ terbuka maka $\nX-U$ tertutup.
+            \item Karena $U \cap A = \emptyset$ maka $A\subseteq \nX-U$.
+            \item $\nX-U$ himpunan tertutup yang mengandung $A$, maka $\comp{A}\subseteq \nX-U$.
+            \item $x \in U$, maka $x \notin \nX-U$ juga $x\notin \comp{A}$
+        \end{itemize}
+        Ini berkontradiksi dengan asumsi
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Limit Point}
+    \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $A$ subset dari ruang topologi $(\nX,\nT)$. Titik $x$ di $\nX$ adalah
+        \textbf{limit point} dari $A$ jika setiap lingkungan $x$ mengandung suatu titik di $A$ yang bukan $x$.\\
+        $A'$ menyatakan himpunan semua limit point dari $A$.
+    \end{tcolorbox}
+Catatan:\\
+Jika $x$ limit point dari $A$ dan $U$ sembarang lingkungan dari $x$, maka
+$U \cap (A-\{x\})\neq\emptyset$.
+\end{frame}
+
+\begin{frame}{Contoh Limit Point}
+    \begin{tcolorbox}[enhanced,title=Contooh 41 (a), frame style tile={width=\paperwidth}{\wallpaper}]
+        Terhadap \textit{usual topology} di $\R$, jika $a,b\in\R$ dan $a<b$,
+        maka $a$ adalah limit point terhadap $\cic{a,b}$, $\cio{a,b}$, dan $\oio{a,b}$.
+    \end{tcolorbox}
+Analisa: \\
+Terhadap \textit{usual topology} di $\R$ lingkungan dari $a$ adalah 
+$\oio{a-\epsilon,a+\delta}$ dengan $\epsilon,\delta > 0$\\
+Irisan sembarang lingkungan dari $a$ terhadap $\cic{a,b}$, $\cio{a,b}$,$\oio{a,b}$:
+\begin{itemize}
+    \item $\oio{a-\epsilon,a+\delta}\cap\cic{a,b} = \cic{a,b}$ atau $\cio{a,a+\delta}$
+    \item $\oio{a-\epsilon,a+\delta}\cap\cio{a,b} = \cio{a,\min\{b,\delta\}}$
+    \item $\oio{a-\epsilon,a+\delta}\cap\oio{a,b} = \oio{a,\min\{b,\delta\}}$
+\end{itemize}
+Karena $a<b$ dan $a<a+\delta$, setiap kemungkinan ini tidak mungkin himpunan kosong.
+\end{frame}
+
+\begin{frame}{Contoh Bukan Limit Point}
+    \begin{tcolorbox}[enhanced,title=Contooh 41 (b), frame style tile={width=\paperwidth}{\wallpaper}]
+        Terhadap \textit{lower-limit topology} di $\R$, jika $a,b\in\R$ dan $a<b$,
+        maka $b$ bukan limit point terhadap $\cio{a,b}$.
+    \end{tcolorbox}
+Analisa: \\
+Counter-example, pilih himpunan $\cio{b,b+\delta}$ dengan $\delta > 0$. \\
+Maka $\cio{b,b+\delta}$ lingkungan dari $b$ karena $b\in\cio{b,b+\delta}$ 
+dan $\cio{b,b+\delta}\in \nT$.\\
+Tetapi $\cio{a,b}\cap\cio{b,b+\delta}=\emptyset$.\\
+$b$ bukan limit point terhadap $\cio{a,b}$.
+\end{frame}
+
+\begin{frame}{Limit Point Secara Intuitif}
+    \begin{tcolorbox}[enhanced,title=Contooh 42, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $(\nX,d)$ ruang metrik, misalkan $A\subseteq \nX$, dan $x\in\nX$.
+        Maka $x$ adalah limit point dari $A$ jikka $\forall e>0, \exists y\in\nX$ 
+        sehingga $y\neq x$ dan $d(x,y)<\epsilon$.
+    \end{tcolorbox}
+Notes:\\
+Secara intuitif, $x$ limit point dari $A$ jikka terdapat elemen-elemen di $A$ yang 
+bukan $x$ dan "dekat" dengan $x$.
 \end{frame}
