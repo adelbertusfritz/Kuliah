@@ -1,0 +1,117 @@
+\begin{frame}{Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
+        Subset $A$ dari ruang topologi $(\nX, \nT)$ tertutup jika $\nX - A$ komplemennya terbuka.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 38, frame style tile={width=\paperwidth}{\wallpaper}]
+        Interval tertutup $\cic{a,b}, a < b$, di $\R$ tertutup terhadap \textit{usual topology}
+        di $\R$ karena komplemennya, $\R-\cic{a,b}$, adalah $(-\infty, a) \cup (b,\infty)$.
+
+        Jika $a \in \R$, maka $\{a\}$ tertutup terhadap \textit{usual topology} di $\R$ karena 
+        $\R - \{a\}=\oio{-\infty,a} \cup \oio{a,\infty}$
+
+        Pada \textit{finite complement topology} dari himpunan $\nX$, \textit{proper subset} dari
+        $\nX$ tertutup jikka subset tersebut berhingga.
+
+        Pada \textit{countable complement topology} dari himpunan $\nX$, \textit{proper subset} dari
+        $\nX$ tertutup jikka subset tersebut terhitung.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 38 (Penjelasan), frame style tile={width=\paperwidth}{\wallpaper}]
+        Interval $[a,b],a<b$ di $\R$ tertutup terhadap \textit{usual topology}
+        \begin{align*}
+            &[a,b] \text{ tertutup}\\
+            \iff &\R - [a,b] \text{ terbuka}\\
+            \iff &(-\infty, a) \cup (b,\infty) \text{ terbuka}\\
+            &(-\infty, a),(b,\infty)\in \nT\\
+            \Longrightarrow& (-\infty, a) \cup (b,\infty) \in \nT\\
+            \iff&(-\infty, a) \cup (b,\infty) \text{ terbuka}\\
+        \end{align*}
+        Untuk $a\in \R$ tertutup penjelasannya serupa.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 38 (Penjelasan), frame style tile={width=\paperwidth}{\wallpaper}]
+        Pada \textit{finite complement topology} dari himpunan $\nX$, \textit{proper subset} dari
+        $\nX$ tutup jikka subset tersebut berhingga.
+        \begin{align*}
+            &A \subset \nX \text{ tertutup}\\
+            \iff &\nX - A \text{ terbuka}\\
+            \iff &\nX - A \in \nT\\
+            \iff &\nX - (\nX - A) \text{ berhingga}\\
+            \iff & A \text{ berhingga}
+        \end{align*}
+        Pada \textit{countable complement topology} dari himpunan $\nX$, \textit{proper subset} dari
+        $\nX$ tutup jikka subset tersebut terhitung. (Penjelasan serupa)
+    \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 39, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $(\nX, d)$ ruang metrik, misalkan $x \in \nX$, dan $\epsilon >0$. Maka
+        $A = \{y \in \nX: d(x,y) \leq \epsilon\}$ adalah subset tertutup dari $\nX$.
+    \end{tcolorbox}
+    Definisi ini mirip dengan definisi Bola Terbuka (1.1) hanya $<$ diganti $\leq$.
+    \begin{tcolorbox}[enhanced,title=Teorema 1.7 (1.2), frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $(\nX, \nT)$ adalah ruang topologi. Misalkan $A$ subset $\nX$ dimana
+        setiap $a \in A$, terdapat $U_a \in \nT$ sehingga $a \in U_a$ dan $U_a \subseteq A$.
+        Maka $A \in \nT$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 39 (Analisa), frame style tile={width=\paperwidth}{\wallpaper}]
+        $x$ tetap $\in \nX$, $\epsilon >0$ tetap.\\
+        $A$ adalah semua titik yang "jaraknya" ke $x$ tidak lebih dari $\epsilon$.\\
+        $\nX - A$ adalah semua titik yang "jaraknya" ke $x$ lebih dari $\epsilon$.\\
+        $A$ tertutup $\iff$ $\nX-A$ terbuka $\iff$ $\nX-A \in \nT$.\\
+        Gunakan Teorema 1.7 ($A_T = \nX - A$, $({\nX}_T,{\nT}_T) = (\nX ,\nT)$, $U_a =?$)\\
+        Ambil sembarang $y\in \nX-A$ dan misalkan $r_y = d(x,y)$.\\
+        Maka $r_y > \epsilon \iff r_y - \epsilon > 0$, misalkan $\delta_y=r_y-\epsilon$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Contoh 39 (Analisa), frame style tile={width=\paperwidth}{\wallpaper}]
+        Klaim: $U_a = B(y,\delta_y) \in \nT$.\\
+        Jelas $y \in B(y, \delta_y)$. Adib $B(y,\delta_y) \subseteq \nX-A$.
+        \begin{enumerate}
+            \item Ambil sembarang $z \in B(y, \delta_y)$ maka $d(y,z) < \delta_y$.\\
+            \item Dari sifat metrik $d(x,z)+d(z,y) \geq d(x,y) \iff d(x,z) \geq d(x,y)-d(z,y)$\\
+            \item Dari 1, $d(y,z) < \delta y \iff -d(y,z) > -\delta_y$\\$\iff d(y,z) > -(r_y-\epsilon)$
+            \item Dari 1 dan 2, $d(x,z) \geq d(x,y)-d(z,y) > d(x,y)-\delta_y$\\
+            $\iff d(x,z) > d(x,y) - (r_y-\epsilon)$\\$\iff d(x,z) > r_y - (r_y-\epsilon) \iff d(x,z) > \epsilon$.
+            \item $z \notin A$ sehingga $z \in \nX - A$, maka $B(y,\delta_y) \subseteq \nX-A$.
+        \end{enumerate}
+        
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $(\nX,\nT)$ adalah ruang topologi. Maka kondisi berikut berlaku:
+        \begin{enumerate}
+            \item $\nX$ dan $\emptyset  $ adalah subset tertutup.
+            \item Jika $\nA$ adalah \textit{finite family of closed subset} dari $\nX$, maka
+            $\bigcup\{A:A\in\nA\}$ adalah himpunan tertutup.
+            \item Jika $\nA$ adalah \textit{family of closed subsets} dari $\nX$, maka
+            $\bigcap\{A:A\in\nA\}$ adalah himpunan tertutup.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Closed Subset}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.18, frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\nX,\nT)$ adalah ruang topologi
+        \begin{enumerate}
+            \item $\nX$ tertutup karena $\nX-\nX = \emptyset \in \nT$, terbuka.\\
+            $\emptyset$ tertutup karena $\nX-\emptyset = \nX \in \nT$, terbuka.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}

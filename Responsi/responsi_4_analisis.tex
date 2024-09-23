@@ -1,0 +1,108 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={15cm, 20cm},
+ }
+\usepackage{graphicx}
+\input{packages.tex}
+
+\title{Responsi 4}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{Responsi 4 Analisis 1}
+    \textbf{Tim Asisten Dosen}
+\end{flushright}
+
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+
+
+\begin{center}
+\textbf{\large{SOAL}}
+\end{center}
+\begin{enumerate}[leftmargin=*, label={\arabic*}.]
+\item Misalkan $S \subset \R$ adalah suatu himpunan tak kosong dan terbatas. Misalkan pula
+\[
+    T := \{as+b: s\in S\}, \text{dengan } a,b\in \R \text{ dan } a\neq 0
+\]
+Tentukanlah formula dari $\sup T$ yang bergantung pada $\sup S$ dan $\inf S$. Buktikan kebenaran formula tersebut.
+
+\item Misalkan $\epsilon > 0$ dan $\delta > 0$. Jika $V_r(a)$ menyatakan lingkungan 
+dari $a \in \R$ dengan radius $r$, tunjukkan bahwa $V_\epsilon(a)\cap V_\delta(a)$ 
+dan $V_\epsilon(a) \cup V_\delta(a)$ merupakan lingkungan dari $a$ dengan raidus 
+$\gamma$, untuk nilai $\gamma$ yang sesuai.
+
+\item Misalkan $a,b$ adalah bilangan real dengan $0 < a < b$. Gunakanlah teorema limit 
+untuk menunjukkan barisan $(x_n)=((a^n+b^n)^{1/n})$ adalah barisan yang konvergen 
+dan tentukan nilai limitnya.
+\end{enumerate}
+
+
+\vspace{0.2cm}\hrule height 1pt
+
+
+\newpage
+\begin{center}
+\textbf{\large{PEMBAHASAN}}
+\end{center}
+\begin{enumerate}[leftmargin=*, label={\arabic*}.]
+\item Karena $S$ terbatas maka
+\begin{align*}
+    &\inf S \leq s \leq \sup S\\
+    \iff &a \inf S + b \leq as+b \leq a \sup S + b &\text{saat $a>0$}\\
+    \text{atau } &a \inf S + b \geq as+b \geq a \sup S + b &\text{saat $a<0$}
+\end{align*}
+Berlaku untuk semua $s$, maka $T=\{as+b, s\in S\}$ terbatas
+
+
+\[\sup T=
+\begin{cases}
+    a \sup S + b, &\text{jika $a > 0$}\\
+    a \inf S + b, &\text{jika $a < 0$}    
+\end{cases}\]
+Bukti: Asumsikan bukan batas atas terkecil namun dari penjelasan sebelumnya 
+$\sup T$ yang diasumsikan adalah batas atas. Nanti berujung $\sup S$ 
+bukan batas atas terkecil $S$ atau $\inf S$ bukan batas bawah terbesar $S$. 
+Tapi ini berkontradiksi dengan definisi $\sup S$ dan $\inf S$.
+
+\item Untuk $V_\epsilon (a)\cap V_\delta(a)$, Klaim: $\gamma = \min\{\epsilon, \delta\}$.\\
+Ambil sembarang $x \in V_\epsilon (a)\cap V_\delta(a)$, by definition $x \in V_\epsilon (a)$ dan $x \in V_\delta(a)$.\\
+Dari definisi neigborhood:
+\[
+    |x-a| < \epsilon \text{ dan } |x-a| < \delta
+\]
+ini ekuivalen dengan 
+\[
+    |x-a| < \min\{\epsilon, \delta\}
+\]
+Maka $V_\epsilon (a)\cap V_\delta(a) = V_{\min\{\epsilon, \delta\}}(a)$\\
+
+Untuk $V_\epsilon (a)\cup V_\delta(a)$, Klaim: $\gamma = \max\{\epsilon, \delta\}$.\\
+Ambil sembarang $x \in V_\epsilon (a)\cup V_\delta(a)$, by definition $x \in V_\epsilon (a)$ atau $x \in V_\delta(a)$.\\
+Dari definisi neigborhood:
+\[
+    |x-a| < \epsilon \text{ atau } |x-a| < \delta
+\]
+ini ekuivalen dengan 
+\[
+    |x-a| < \max\{\epsilon, \delta\}
+\]
+Maka $V_\epsilon (a)\cup V_\delta(a) = V_{\max\{\epsilon, \delta\}}(a)$
+
+\item Gunakan teorema apit
+\begin{align*}
+    &0 < a < b\\
+    \iff& 0 < a^n < b^n\\
+    \iff& b^n < a^n+b^n < 2b^n\\
+    \iff& b < \oio*{a^n+b^n}^{1/n} < 2^{1/n}b
+\end{align*}
+$\lim (b) = b$ dan $\lim (2^{1/n}b) = b$.
+
+\end{enumerate}
+\end{document}
