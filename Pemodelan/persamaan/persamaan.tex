@@ -1,0 +1,134 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={15cm, 20cm},
+ }
+\usepackage{graphicx}
+\input{packages.tex}
+
+\title{Persamaan Gelombang untuk Pemodelan Megathrust}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{Persamaan Gelombang untuk Pemodelan Megathrust}
+    \textbf{Fritz Adelbertus Sitindaon}
+\end{flushright}
+\textbf{PERINGATAN!}\\
+ringkasan ini digunakan untuk menjelaskan secara umum proses untuk menjawab pertanyaan berikut:\\
+\textbf{Diberikan data yang cukup untuk memodelkan tsunami, bagaimana dampaknya jika tsunami mencapai daratan?}
+
+three models needed:
+\begin{enumerate}
+    \item tsunami waves propagation modelling
+    \item inundation modeling (pembanjiran)
+    \item damage assessment on land
+\end{enumerate}
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+\begin{center}
+    \textbf{Persamaan Gelombang Tsunami (2 Dimensi)}
+\end{center}
+Dari hukum kekekalan massa:
+\[
+\frac{\partial h}{\partial t} + \frac{\partial (hu)}{\partial x} + \frac{\partial (hv)}{\partial y} = 0
+\]
+Dari hukum kekekalan momentum:
+\[
+\frac{\partial (hu)}{\partial t} + \frac{\partial}{\partial x} \oio*{hu^2+\frac{1}{2}gh^2} + \frac{\partial (huv)}{\partial y} = 0
+\]
+\[
+\frac{\partial (hv)}{\partial t} + \frac{\partial (huv)}{\partial x} + \frac{\partial}{\partial y} \oio*{hu^2+\frac{1}{2}gh^2} = 0
+\]
+\begin{enumerate}
+    \item $h(x,y,t)$ adalah kedalaman air pada titik $(x,y)$ pada waktu $t$.
+    \item $u(x,y,t)$ kecepatan horizontal pada sumbu-$x$
+    \item $v(x,y,t)$ kecepatan horizontal pada sumbu-$y$
+    \item $g$ adalah percepatan dari gravitasi
+\end{enumerate}
+
+\noindent\textbf{Requirements Modelling Tsunami Waves}
+\begin{enumerate}
+    \item Initial information needed:
+    \begin{enumerate}
+        \item magnitude, yaitu energy yang dihasilkan oleh kejadian seismik
+        \item epicenter, koordinat pusat sumber gelombang
+        \item kedalaman, terhadap permukaan laut
+        \item fault geometry, fault length, width, dip angle, slip
+        \item bathymetry data, peta topografi dasar laut beserta kedalamannya
+    \end{enumerate}
+    \item Model Seafloor Displacement \& Initial Conditions Setup\\
+    Gunakan model Okada untuk memperolah kondisi awal yang akan dimasukkan kedalam persamaan gelombang tsunami
+    \item Fit to Mathematical Model
+    \item Solve (numerically)
+    \item Integrate data bathymetry
+\end{enumerate}
+Hasil: Simulasi model tsunami dari titik terjadi sampai ujung pesisir
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+\begin{center}
+    \textbf{Model Pembanjiran}
+\end{center}
+Persamaan gelombang tsunami sebelumnya dapat diperluas ke darat\\
+\noindent\textbf{Requirements Modelling Inundation}
+\begin{enumerate}
+    \item Additional information needed:
+    \begin{enumerate}
+        \item topographic data, data topografi pesisir dan daratan yang beresiko terkena tsunami
+    \end{enumerate}
+    \item Setting boundary conditions
+    \item Adding land frictions
+    \item Obtaining run-ups
+\end{enumerate}
+Hasil: ketinggian dan kecepatan gelombang pada setiap titik di daratan
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+\begin{center}
+    \textbf{Damage Assessment}
+\end{center}
+Dalam tahap ini ketinggian dan kecepatan gelombang pada setiap koordinat darat telah diperoleh\\
+\noindent\textbf{What we can obtain:}
+\begin{enumerate}
+    \item Energy:
+    \[
+        E = \frac{1}{2}\rho g h^2
+    \]
+    \begin{enumerate}
+        \item $E$ energi gelombang
+        \item $p$ densitas air
+        \item $g$ gravitasi
+        \item $h$ tinggi gelombang
+    \end{enumerate}
+    \item Impact Force on Structure:
+    \[
+        F = \rho g h A
+    \]
+    \begin{enumerate}
+        \item $F$ gaya
+        \item $\rho$ densitas air
+        \item $g$ gravitasi
+        \item $h$ kedalaman
+        \item $A$ Area struktur
+    \end{enumerate}
+\end{enumerate}
+Terapkan model yang mengevaluasi struktur bangunan bila diberikan gaya hidrodinamis.
+Hasil: evaluasi struktur bangunan pada lokasi yang terkena pembanjiran
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+\noindent Additional Notes:
+\begin{enumerate}
+    \item hydrodynamic modelling, memodelkan seluruh proses dari tsunami generation sampai pembanjiran
+    \item oceanografi, teknik sipil, dan matematika
+\end{enumerate}
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+Referensi: 
+Diskusi dengan ChatGPT
+
+\end{document}

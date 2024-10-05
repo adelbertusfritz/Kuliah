@@ -1,0 +1,208 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={15cm, 20cm},
+ }
+\usepackage{graphicx}
+\input{packages.tex}
+
+\title{PD di COMCOT untuk Pemodelan Tsunami}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{COMCOT untuk Pemodelan Tsunami}
+    \textbf{Fritz Adelbertus Sitindaon}
+\end{flushright}
+\textbf{PERINGATAN!}\\
+ringkasan ini digunakan untuk menjelaskan secara umum proses untuk menjawab pertanyaan berikut:\\
+\textbf{Persamaan Differensial yang digunakan COMCOT untuk Memodelkan Gelombang Tsunami di Perairan}
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+\begin{center}
+    \textbf{Persamaan Gelombang Tsunami Di Laut Dalam (Koordinat Bola)}
+    \\Linear Shallow Water Wave Equation
+\end{center}
+\begin{equation}
+    \frac{\partial \eta}{\partial t} + \frac{1}{R\cos \varphi}\left\{\frac{\partial P}{\partial \psi}+\frac{\partial}{\partial \varphi}(\cos \varphi Q)\right\} = -\frac{\partial h}{\partial t}
+\end{equation}
+\begin{equation}
+    \frac{\partial P}{\partial t} + \frac{gh}{R\cos \varphi}\frac{\partial \eta}{\partial \psi}-fQ=0
+\end{equation}
+\begin{equation}
+    \frac{\partial Q}{\partial t} + \frac{gh}{R}\frac{\partial \eta}{\partial\varphi}+fP=0
+\end{equation}
+
+\begin{enumerate}
+    \item $\eta:$ Fluktuasi permukaan air (m)
+    \item $P,Q:$ Volume flux component (volume air yang berpindah pada permukaan terhadap waktu)\\
+    $P$ mengarah ke timur (sumbu-$x$), $Q$ mengarah ke utara (sumbu-$y$). (V/A.t) (m/s)
+    \item $(\varphi, \psi):$, koordinat bola (latitude dan longitude) (tidak ada satuan) 
+    \item $R:$ jari-jari bumi (m)
+    \item $g:$ gravitasi (m/s^2)
+    \item $h:$ kedalaman air (m)
+    \item $-\frac{\partial h}{\partial t}:$ representasikan variasi bathymetry
+    \item $f$ gaya Coriolis dengan $f=\Omega \sin\varphi$, $\Omega$ adalah rate rotation dari bumi
+\end{enumerate} (kg m/s^2)
+
+Persamaan 1: Persamaan gelombang di laut dalam (m/s)
+Persamaan 2: Persamaan gelombang di laut dangkal(m/s^2) (perubahan fluks )
+
+Persamaan 1: Perubahan ketinggian air terhadap waktu\\
+Persamaan 2: Perubahan flux volume component pada longitud terhadap waktu
+Persamaan 3: Perubahan flux volume component pada latitud terhadap waktu
+
+\begin{center}
+    \textbf{Persamaan Gelombang Tsunami Di Pesisir (Koordinat Bola)}\\
+    Nonlinear Shallow Water Wave Equation
+\end{center}
+\begin{equation}
+    \frac{\partial \eta}{\partial t} + \frac{1}{R\cos \varphi}\left\{\frac{\partial P}{\partial \psi}+\frac{\partial}{\partial \varphi}(\cos \varphi Q)\right\} = -\frac{\partial h}{\partial t}
+\end{equation}
+\begin{equation}
+    \frac{\partial P}{\partial t} + \frac{1}{R\cos\varphi}\frac{\partial}{\partial \psi}\left\{\frac{P^2}{H}\right\}+\frac{1}{R}\frac{\partial}{\partial\varphi}
+    \left\{\frac{PQ}{H}\right\} + \frac{gH}{R\cos\varphi}\frac{\partial\eta}{\partial\psi}-fQ+F_x=0
+\end{equation}
+\begin{equation}
+    \frac{\partial Q}{\partial t} + \frac{1}{R\cos\varphi}\frac{\partial}{\partial \psi}\left\{\frac{PQ}{H}\right\}+\frac{1}{R}\frac{\partial}{\partial\varphi}
+    \left\{\frac{Q^2}{H}\right\} + \frac{gH}{R}\frac{\partial\eta}{\partial\varphi}+fP+F_y=0
+\end{equation}
+
+\begin{enumerate}
+    \item $H:$ total kedalaman air $h+\eta$
+    \item $F_x, F_y$: gaya gesek bawah laut pada arah sumbu-$x/y$
+    \[
+        F_x=\frac{gn^2}{H^{7/3}}P\oio*{P^2+Q^2}^{1/2}
+    \]
+    \[
+        F_y=\frac{gn^2}{H^{7/3}}Q\oio*{P^2+Q^2}^{1/2}
+    \]
+    \item $n:$ koefisien Manning (bergantung ruang)
+\end{enumerate}
+
+
+\begin{center}
+    \textbf{Solusi Numerik Persamaan Gelombang Tsunami Di Laut Dalam (Koordinat Bola)}
+    \\Explicit Leap-Frog Finite Difference
+\end{center}
+\begin{align*}
+    &\frac{\eta_{i,j}^{n+1/2}-\eta_{i,j}^{n-1/2}}{\Delta t} 
+    + \left\{\frac{1}{R\cos \varphi}\right\}_{i,j}\frac{P_{i+1/2,j}^n-P_{i-1/2,j}^n}{\Delta\psi}
+\end{align*}
+\begin{align}
+    &+ \left\{\frac{1}{R\cos \varphi}\right\}_{i,j}\frac{\oio*{\cos\varphi_{i,j+1/2}}Q_{i,j+1/2}^n-\oio*{\cos\varphi_{i,j-1/2}}Q_{i,j-1/2}^n}
+    {\Delta \varphi} = -\frac{h_{i,j}^{n+1/2}-h_{i,j}^{n-1/2}}{\Delta t}
+\end{align}
+\begin{equation}
+    \frac{P_{i+1/2,j}^{n+1}-P_{i+1/2,j}^n}{\Delta t} 
+    + \left\{\frac{gh}{R\cos\varphi}\right\}_{i+1/2,j}
+    \frac{\eta_{i+1,j}^{n+1/2}-\eta_{i,j}^{n+1/2}}{\Delta\psi}
+    -fQ_{i,j+1/2}^n=0
+\end{equation}
+\begin{equation}
+    \frac{Q_{i,j+1/2}^{n+1}-Q_{i+1/2,j+1/2}^n}{\Delta t} 
+    + \left\{\frac{gh}{R}\right\}_{i,j+1/2}
+    \frac{\eta_{i,j+1}^{n+1/2}-\eta_{i,j}^{n+1/2}}{\Delta\varphi}
+    +fP_{i+1/2,j}^n=0
+\end{equation}
+
+\begin{enumerate}
+    \item index $i$ mengacu ke step di sumbu-$x$ (longitud $\Delta\psi$)
+    \item index $j$ mengacu ke step di sumbu-$y$ (latitud $\Delta\varphi$)
+    \item index $n$ mengacu ke step di waktu ($\Delta t$)
+\end{enumerate}
+
+
+\begin{center}
+    \textbf{Solusi Numerik Persamaan Gelombang Tsunami Di Pesisir (Koordinat Bola)}
+    \\Upwind Finite Difference
+\end{center}
+Stability Requirement: $\sqrt{2gh}\Delta t/\Delta x < 1$
+\begin{equation}
+    \eta_{i,j}^{n+1/2} = \eta_{i,j}^{n-1/2} - \frac{1}{R\cos\varphi_{i,j}}\frac{\Delta t}{\Delta \psi}
+    \oio*{P_{i+1/2,j}^n-P_{i-1/2,j}^n}-\frac{1}{R}\frac{\Delta t}{\Delta \varphi}
+    \oio*{Q_{i,j+1/2}^n-Q_{i,j-1/2}^n}
+\end{equation}
+\begin{align*}
+    P_{i+1/2,j}^{n+1}=&f_x\left\{(1-v_x\Delta t)P_{i+1/2,j}^{n+1}
+    -\left\{\frac{gH}{R\cos\varphi}\right\}_{i+1/2,j}^{n+1/2}\frac{\Delta t}{\Delta \psi}
+    \oio*{\eta_{i+1,j}^{n+1/2}-\eta_{i,j}^{n+1/2}}\right\}\\
+    &-\frac{f_x}{R\cos\varphi_{i+1/2,j}}\frac{\Delta t}{\Delta \psi}\left\{
+    \lambda_{11}\frac{\oio*{P_{i+3/2,j}^n}^2}{H_{i+3/2,j}^n}
+    +\lambda_{12}\frac{\oio*{P_{i+1/2,j}^n}^2}{H_{i+1/2,j}^n}
+    +\lambda_{13}\frac{\oio*{P_{i-1/2,j}^n}^2}{H_{i-1/2,j}^n}
+    \right\}\\
+    &-\frac{f_x}{R}\frac{\Delta t}{\Delta \varphi}\left\{
+    \lambda_{21}\frac{(PQ)^n_{i+1/2,j+1}}{H_{i+1/2,j+1}^n}
+    +\lambda_{22}\frac{(PQ)^n_{i+1/2,j}}{H_{i+1/2,j}^n}
+    +\lambda_{23}\frac{(PQ)^n_{i+1/2,j-1}}{H_{i+1/2,j-1}^n}
+    \right\}
+\end{align*}
+\begin{align*}
+    Q_{i,j+1/2}^{n+1}=&f_y\left\{(1-v_y\Delta t)Q_{i,j+1/2}^{n+1}
+    -\left\{\frac{gH}{R}\right\}_{i,j+1/2}^{n+1/2}\frac{\Delta t}{\Delta \psi}
+    \oio*{\eta_{i,j+1}^{n+1/2}-\eta_{i,j}^{n+1/2}}\right\}\\
+    &-\frac{f_y}{R\cos\varphi_{i,j+1/2}}\frac{\Delta t}{\Delta \psi}\left\{
+    \lambda_{31}\frac{(PQ)^n_{i+1,j+1/2}}{H_{i+1,j+1/2}^n}
+    +\lambda_{32}\frac{(PQ)^n_{i,j+1/2}}{H_{i,j+1/2}^n}
+    +\lambda_{33}\frac{(PQ)^n_{i-1,j+1/2}}{H_{i-1,j+1/2}^n}
+    \right\}\\
+    &-\frac{f_y}{R}\frac{\Delta t}{\Delta \varphi}\left\{
+    \lambda_{41}\frac{\oio*{Q_{i,j+3/2}^n}^2}{H_{i,j+3/2}^n}
+    +\lambda_{42}\frac{\oio*{Q_{i,j+1/2}^n}^2}{H_{i,j+1/2}^n}
+    +\lambda_{43}\frac{\oio*{Q_{i,j-1/2}^n}^2}{H_{i,j-1/2}^n}
+    \right\}
+\end{align*}
+Dimana 
+\[
+f_x=1/(1+v_x\Delta t),\quad f_y=1/(1+v_y\Delta t)
+\]
+dengan (ini masih belum jelas kenapa ada $Q_{i+1/2,j}$ dan $P_{i,j+1/2}$)
+\[
+v_x = \frac{1}{2}\frac{gn^2}{\oio*{H^n_{i+1/2,j}}^{7/3}}
+\cic*{\oio*{P^n_{i+1/2,j}}^2+\oio*{Q^n_{i+1/2,j}}^2}^{1/2}
+\]
+\[
+v_y = \frac{1}{2}\frac{gn^2}{\oio*{H^n_{i+1/2,j}}^{7/3}}
+\cic*{\oio*{P^n_{i,j+1/2}}^2+\oio*{Q^n_{i,j+1/2}}^2}^{1/2}
+\]
+juga koefisien $\lambda$
+\begin{align*}
+    &\begin{cases}
+        \lambda_{11}=0,\,\lambda_{12}=1,\,\lambda_{13}=-1,&\text{jika $P^n_{i+1/2,j}\geq 0$}\\
+        \lambda_{11}=1,\,\lambda_{12}=-1,\,\lambda_{13}=0,&\text{jika $P^n_{i+1/2,j}< 0$}
+    \end{cases}\\
+    &\begin{cases}
+        \lambda_{21}=0,\,\lambda_{22}=1,\,\lambda_{23}=-1,&\text{jika $Q^n_{i+1/2,j}\geq 0$}\\
+        \lambda_{21}=1,\,\lambda_{22}=-1,\,\lambda_{23}=0,&\text{jika $Q^n_{i+1/2,j}< 0$}
+    \end{cases}\\
+    &\begin{cases}
+        \lambda_{31}=0,\,\lambda_{32}=1,\,\lambda_{33}=-1,&\text{jika $P^n_{i,j+1/2}\geq 0$}\\
+        \lambda_{31}=1,\,\lambda_{32}=-1,\,\lambda_{33}=0,&\text{jika $P^n_{i,j+1/2}< 0$}
+    \end{cases}\\
+    &\begin{cases}
+        \lambda_{41}=0,\,\lambda_{42}=1,\,\lambda_{43}=-1,&\text{jika $Q^n_{i,j+1/2}\geq 0$}\\
+        \lambda_{41}=1,\,\lambda_{42}=-1,\,\lambda_{43}=0,&\text{jika $Q^n_{i,j+1/2}< 0$}
+    \end{cases}
+\end{align*}
+Lebih jelas di Manual COMCOT
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+\noindent Asumsi yang disertakan
+\begin{enumerate}
+    \item inviscous flow, (tidak adanya disipasi energi)
+    \item variasi vertikal diabaikan
+\end{enumerate}
+Rasio grid size 3-5
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+\noindent Referensi: \\
+X. Wang; W. Power 2011. COMCOT: a Tsunami Generation Propagation and
+Run-up Model, GNS Science Report 2011/43 129 p.
+
+\end{document}

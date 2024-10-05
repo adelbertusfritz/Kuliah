@@ -1,0 +1,126 @@
+\begin{frame}{Teorema Limit Point}
+\begin{tcolorbox}[enhanced,title=Teorema 1.20, frame style tile={width=\paperwidth}{\wallpaper}]
+Misalkan $A$ adalah subset dari ruang topologi $(\nX,\nT)$. Maka $\overline{A} = A \cup A'$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,title=Teorema 1.20 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+Pertama, akan dibuktikan bahwa $\overline{A}\subseteq A\cup A'$.
+\begin{itemize}
+    \item Misalkan $x \in \overline{A}$. Jika $U$ adalah sembarang lingkungan dari $x$, maka berdasarkan Teorema 1.19, $U\cap A \neq \emptyset$
+    \item Jika setiap lingkungan $U$ dari $x$ mengandung titik di $A$ yang berbeda dengan $x$, maka $x \in A'$.
+    \item Jika ada lingkungan $U$ dari $x$ sedemikian sehingga $U\cap A = \{x\}$, maka $x\in A$.
+\end{itemize}
+Sehingga, berdasarkan kedua kasus tersebut $\overline{A}\subseteq A\cup A'$
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Limit Point}
+\begin{tcolorbox}[enhanced,title=Teorema 1.20 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+Selanjutnya, akan dibuktikan $A\cap A'\subseteq \overline{A}$.
+\begin{itemize}
+    \item Misalkan $X\in A\cup A'$.
+    \item Jika $x\in A$, maka $x$ berada pada setiap himpunan tertutup yang mengandung $A$, sehingga $x\in \overline{A}$.
+    \item JIka $x\in A'$ maka setiap lingkungan $U$ dari $x$ mengandung titik di $A$ yang berbeda dari $x$. Berdasarkan Teorema 1.19, $x \in \overline{A}$.
+\end{itemize}
+Berdasarkan kedua kasus tersebut diperoleh $A\cup A'\subseteq \overline{A}$.
+\end{tcolorbox}
+    
+\end{frame}
+
+\begin{frame}{Teorema Limit Point}
+\begin{tcolorbox}[enhanced,title=Teorema 1.21, frame style tile={width=\paperwidth}{\wallpaper}]
+Misalkan $A$ adalah subset dari ruang topologi $(\nX,\nT)$. Maka, $A$ tertutup jikka $A'\subseteq A$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,title=Teorema 1.21 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+$(\Rightarrow)$ Misalkan $A$ tertutup, dan $x\notin A$. Maka, $\nX-A$ adalah lingkungan dari $x$ di mana $\nX-A\cap A = \emptyset$. Sehingga, $x\notin A'\Rightarrow A'\subseteq A$.\\
+$(\Leftarrow)$ Misalkan $A'\subseteq A$. Maka, untuk setiap $x\in \nX-A$, terdapat lingkungan $U_x$ dari $x$ sedemikian sehingga $U_x\cap A = \emptyset$. Karena $\bigcup\{U_x:x\in\nX - A\}$ adalah himpunan buka dan $A = \nX - \bigcup\{U_x:x\in \nX - A\}$, maka $A$ tertutup.
+\end{tcolorbox}
+    
+\end{frame}
+
+\begin{frame}{Teorema Limit Point}
+\begin{tcolorbox}[enhanced,title=Teorema 1.22, frame style tile={width=\paperwidth}{\wallpaper}]
+Misalkan $A$ dan $B$ adalah subset dari ruang topologi $(\nX, \nT)$. Maka:
+\begin{enumerate}
+    \item $A$ tertutup jikka $A = \overline{A}$.
+    \item $\overline{\overline{A}} = \overline{A}$.
+    \item $\overline{\emptyset} = \emptyset$.
+    \item $\overline{A}\subseteq \overline{B}$ saat $A\subseteq B$.
+    \item $\overline{A\cup B} = \overline{A} \cup \overline{B}$.
+    \item $\overline{A\cap B} \subseteq \overline{A} \cap \overline{B}$.
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Limit Point}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.22 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+    \begin{enumerate}
+        \item[1.] $(\Rightarrow)$ Misalkan A tertutup. Maka, A adalah himpunan tertutup yang mengandung $A$, sehingga irisan dari setiap himpunan tutup yang mengandung $A$ adalah $A$. Oleh karenanya, $\overline{A} = A$.\\
+        $(\Leftarrow)$ Misal $\overline{A} = A$. Karena $\overline{A}$ tertutup, maka $A$ tertutup. 
+    \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Limit Point}
+\begin{tcolorbox}[enhanced,title=Teorema 1.22 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+\begin{enumerate}
+\item[5.] \begin{itemize}
+            \item Misal $x\in \overline{A}\cup \overline{B}$. Maka, $x \in \overline{A}$ atau $x\in \overline{B}$. WLOG misalkan $x\in \overline{A}$. Misalkan $U$ adalah lingkungan dari $x$, maka $U\cap A \neq \emptyset$. Karena $A\subseteq A\cup B$, $U\cap(A\cup B) \neq \emptyset$. Sehingga, $x\in \overline{A\cup B}$.
+            \item Misalkan $x\notin \overline{A}\cup\overline{B}$. Artinya $x \notin \overline{A}$ dan $x\notin\overline{B}$. Sehingga, terdapat lingkungan $U$ dan $V$ dari $x$ sedemikian sehingga $U\cap A = \emptyset$ dan $V\cap B = \emptyset$. Kemudian, jelas bahwa $U\cap V$ adalah lingkungan dari $x$ dan $(U\cap V)\cap(A\cup B) = \emptyset$. Maka, $x\notin \overline{A\cup B}\Rightarrow \overline{A\cup B}\subseteq \overline{A}\cap\overline{B}$
+        \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+\textbf{Catatan:} Untuk bukti lainnya dapat dilihat di Exercise 7.
+    
+\end{frame}
+
+\begin{frame}{Contoh Teorema}
+\begin{tcolorbox}[enhanced,title=Contoh 43, frame style tile={width=\paperwidth}{\wallpaper}]
+Misalkan $\nT$ adalah usual topology $\R$, misalkan pula $A = (0,1)$ dan $B = (1,2)$. Kemudian, $A\cap B = \emptyset$, maka $\overline{A\cap B} = \emptyset$. Kemudian, $\overline{A} = [0,1]$ dan $\overline{B} = [1,2]$, maka $\overline{A}\cap\overline{B} = \{1\}$
+\end{tcolorbox}
+    
+\end{frame}
+
+\begin{frame}{Boundary}
+    \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
+    Misalkan $A$ adalah subset ruang topologi $(\nX, \nT)$. Titik $x\in \nX$ adalah titik boundary dari $A$ jika $x \in \overline{A}\cap \overline{(\nX-A)}$. Boundary dari $A$, $bd(A)$ adalah himpunan semua titik boundary dari $A$.
+    \end{tcolorbox}
+    Perhatikan bahwa $x$ adalah titik boundary dari $A$ dari ruang topologi, maka $x\in\overline{A}$ dan $x\in \overline{\nX-A}$. Maka, $x\in A$ atau $x$ adalah limit point dari $A$, dan $\nX\in \nX - A$ atau $x$ adalah limit point dari $\nX-A$. Namun, $x$ tidak dapat berada di $\nX$ atau $\nX-A$ sehingga $x \in A$ atau $x \in \nX-A$
+\end{frame}
+
+\begin{frame}{Separable Space}
+    \begin{tcolorbox}[enhanced,title=Definisi, frame style tile={width=\paperwidth}{\wallpaper}]
+    Subset $A$ dari ruang topologi $(\nX,\nT)$ dense di $\nX$ jika $\overline{A} = \nX$. JIka $\nX$ memiliki countable dense subset, maka $(\nX, \nT)$ adalah ruang separable.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Ruang Separable}
+    \begin{tcolorbox}[enhanced,title=Contoh 44, frame style tile={width=\paperwidth}{\wallpaper}]
+    Misal $\nT$ adalah usual topology di $\R$. Maka, himpunan bilangan rasional adalah subset dense yang countable sehingga $(\R, \nT)$ adalah ruang separable.
+    \end{tcolorbox}
+    Analisis: Misal $x\in \R$ dan $U$ adalah neighborhood dari $x$. Maka, terdapat $a,b\in\R$ sedemikian sehingga $x\in(a,b)\subseteq U$. Kemudian, karena $(a,b)$ mengandung bilangan rasional, $x$ berada di closure dari himpunan bilangan rasional. Sehingga himpunan bilangan rasional merupakan subset dense yang countable.
+\end{frame}
+
+\begin{frame}{Teorema Separable}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.23, frame style tile={width=\paperwidth}{\wallpaper}]
+    Setiap ruang yang second countable adalah separable.
+    \end{tcolorbox}
+    \begin{tcolorbox}[enhanced,title=Teorema 1.23 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+    Misalkan $(\nX,\nT)$ adalah ruang yang second countable, dan misalkan pula $\nB$ adalah countable basis untuk $\nT$. Untuk setiap anggota $B_i$ yang tak kosong dari $\nB$, pilih titik $x_i\in B$ dan misalkan $A = \{x_i: B_i\in \nB\}$. Maka, $A$ adalah countable subset dari $\nX$. Selanjutnya akan dibuktikan $\overline{A} = \nX$. Misalkan $x\in \nX$ dan misalkan $U$ adalah neighborhood dari $x$. Maka, terdapat $B_j\in \nB$ sedemikian sehingga $x\in B_j$ dan $B_j\subseteq U$. Karena $x_j\in A\cap B_j$, maka $x\in \overline{A}$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Contoh Ruang Separable yang Tidak Second Countable}
+\begin{tcolorbox}[enhanced,title=Contoh 45, frame style tile={width=\paperwidth}{\wallpaper}]
+Misal $\nT$ adalah lower-limit topology dari $\R$.  Dari Contoh 36 pada Subbab 1.2, $(\R,\nT)$ tidak second countable. Namun, pada Exercise 9 himpunan bilangan rasional adalah countable dense subset di $(\nX,\nT)$, maka $(\R,\nT)$ adalah ruang separable.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}{Contoh Ruang Separable yang Tidak First Countable}
+\begin{tcolorbox}[enhanced,title=Contoh 46, frame style tile={width=\paperwidth}{\wallpaper}]
+Misal $\nT$ adalah finite complement topology pada $\R$. Maka tiap subset tak hingga pasti dense di $\R$, maka $(\R,\nT)$ separable. Berdasarkan contoh 35, $(\R,\nT)$ tidak first countable.
+\end{tcolorbox}
+    Analisis: MIsalkan $A$ adalah subset tak hingga dari $\R$. Untuk membuktikan $(\R,\nT)$ ruang separable dengan menujukkan bahwa $A$ dense di $\R$. Misalkan $x\in \R$ dan misalkan $U$ adalah neighborhood dari $x$. Karena $\R-U$ finite, U pasti mengandung semua anggota dari $A$ kecuali sejumlah finite anggota. Kemudian, $A\cap U \neq \emptyset$. Sehingga $x\in\overline{A}\Rightarrow \overline{A} = \R$.
+\end{frame}
