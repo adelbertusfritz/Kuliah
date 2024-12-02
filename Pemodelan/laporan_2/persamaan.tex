@@ -38,23 +38,45 @@ ringkasan ini digunakan untuk menjelaskan secara umum proses untuk menjawab pert
 \end{equation}
 
 \begin{enumerate}
-    \item $\eta:$ Fluktuasi permukaan air (m)
-    \item $P,Q:$ Volume flux component (volume air yang berpindah pada permukaan terhadap waktu)\\
-    $P$ mengarah ke timur (sumbu-$x$), $Q$ mengarah ke utara (sumbu-$y$). (V/A.t) (m/s)
-    \item $(\varphi, \psi):$, koordinat bola (latitude dan longitude) (tidak ada satuan) 
-    \item $R:$ jari-jari bumi (m)
-    \item $g:$ gravitasi (m/s^2)
-    \item $h:$ kedalaman air (m)
+    \item $\eta:$ Fluktuasi permukaan air $(m)$
+    \item $P,Q:$ Volume flux component (volume air yang berpindah pada permukaan terhadap waktu)
+    $P$ mengarah ke timur (sumbu-$x$), $Q$ mengarah ke utara (sumbu-$y$). $(m/s)$
+    \item $(\varphi, \psi):$, koordinat bola (latitude dan longitude)
+    \item $R:$ jari-jari bumi $(m)$
+    \item $g:$ gravitasi $(m/s^2)$
+    \item $h:$ kedalaman air $(m)$
     \item $-\frac{\partial h}{\partial t}:$ representasikan variasi bathymetry
     \item $f$ gaya Coriolis dengan $f=\Omega \sin\varphi$, $\Omega$ adalah rate rotation dari bumi
-\end{enumerate} (kg m/s^2)
+    \item $H:$ total kedalaman air $h+\eta$
+    \item $F_x, F_y$: gaya gesek bawah laut pada arah sumbu-$x/y$
+    \[
+        F_x=\frac{gn^2}{H^{7/3}}P\oio*{P^2+Q^2}^{1/2}
+    \]
+    \[
+        F_y=\frac{gn^2}{H^{7/3}}Q\oio*{P^2+Q^2}^{1/2}
+    \]
+    \item $n:$ koefisien Manning (bergantung ruang)
+\end{enumerate}
 
-Persamaan 1: Persamaan gelombang di laut dalam (m/s)
-Persamaan 2: Persamaan gelombang di laut dangkal(m/s^2) (perubahan fluks )
+\[
+F_S = F_D + F_{HS}
+\]
+\[
+F_{HS} = \rho gd_S A
+\]
+\begin{enumerate}
+    \item $F_S:$ \textit{Surge Force}
+    \item $F_D:$ Gaya gesek
+    \item $F_{HS}:$ Gaya hidrostatis
+    \item $\rho:$ Massa jenis air laut
+    \item $g:$ Gravitasi
+    \item $h,d_s:$ ketinggian tsunami
+    \item $C_D:$ Koefisien gesek
+    \item $A:$ Luas permukaan proyeksi terhadap arah gelombang
+    \item $u:$ \textit{tsunami-bore velocity}
+    \item $C:$ koefisien konstan
+\end{enumerate}
 
-Persamaan 1: Perubahan ketinggian air terhadap waktu\\
-Persamaan 2: Perubahan flux volume component pada longitud terhadap waktu
-Persamaan 3: Perubahan flux volume component pada latitud terhadap waktu
 
 \begin{center}
     \textbf{Persamaan Gelombang Tsunami Di Pesisir (Koordinat Bola)}\\

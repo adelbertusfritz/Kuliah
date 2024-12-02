@@ -1,0 +1,200 @@
+\begin{frame}{Teorema terkait sifat Topologi}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.23,frame style tile = {width=\paperwidth}{wallpaper}]
+        Misal $(\mathcal{X}_{1},\mathcal{T}_1)$, $(\mathcal{X}_2,\mathcal{T}_2)$ adalah Ruang Hausdorff, dan misalkan pula $\mathcal{T}$ adalah \textit{product topology} pada $\mathcal{X}=\mathcal{X}_1\times\mathcal{X}_2$, maka $(\mathcal{X},\mathcal{T})$ adalah Ruang Hausdorff.
+    \end{tcolorbox}
+        \textbf{Bukti:}
+        \begin{itemize}
+            \item Misal $(a_1,a_2)$, $(b_1,b_2)$ adalah anggota yang berbeda di $\mathcal{X}$. 
+            \item WLOG misalkan $a_1\neq b_1$. Karena $\mathcal{T}_1$ merupakan Ruang Hausdorff, maka terdapat lingkungan $U\in\mathcal{T}_1$ dari $a_1$ dan $V\in\mathcal{T}_1$ dari $b_1$ yang saling lepas.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+        \begin{itemize}
+            \item Perhatikan bahwa\\ $\pi_1^{-1}(U) = U\times\mathcal{X}_2$ dan $\pi_1^{-1}(V) = V\times\mathcal{X}_2$.
+            \item Maka,\\ $\pi_1^{-1}(U)\times\pi_1^{-1}(V) = (U\times\mathcal{X}_2)\cap( V\times\mathcal{X}_2) = \emptyset$ dan $(a_1,a_2)\in\pi_1^{-1}(U)$, $(b_1,b_2)\in\pi_1^{-1}(V)$.
+            \item Sehingga $\mathcal{X}$ adalah Ruang Hausdorff.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.24,frame style tile={width=\paperwidth}{wallpaper}]
+        Misal $(\mathcal{T}_1,\mathcal{X}_1)$, $(\mathcal{T}_2,\mathcal{X}_2)$ adalah ruang yang \textit{separable}, dan misalkan pula $\mathcal{T}$ adalah \textit{product topology} dari $\mathcal{X}=\mathcal{X}_1\times\mathcal{X}_2$, maka $(\mathcal{X},\mathcal{T})$ adalah ruang yang \textit{separable}.
+    \end{tcolorbox}
+    \textbf{Bukti:}
+    \begin{itemize}
+        \item Karena $\mathcal{X}_1$ dan $\mathcal{X}_2$ adalah ruang yang \textit{separable}, maka terdapat $A_1\subseteq\mathcal{X}_1$ dan $A_2\subseteq\mathcal{X}_2$ yang \textit{countable} sedemikian sehingga $\overline{A_1}=\mathcal{X}_1$ dan $\overline{A_2}=\mathcal{X}_2$
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+        \begin{itemize}
+            \item Misal $(a_1,a_2)\in \mathcal{X}$ dan $(a_1,a_2)\in U$ di mana $U\in \mathcal{T}$.
+            \item Karena $U\in\mathcal{T}$, maka terdapat $U_1\in\mathcal{T}_1$ dan $U_2\in\mathcal{T}_2$ sedemikian sehingga $U_1\times U_2\subseteq U$.
+            \item Berdasarkan definisi $U_1\cap A_1\neq \emptyset$ dan $U_2\cap A_2\neq\emptyset$.
+            \item Perhatikan bahwa\\
+            $\emptyset\neq(U_1\cap A_1)\times(U_2\cap A_1)$ dan $(U_1\cap A_1)\times(U_2\cap A_1) = (U_1\times U_2)\cap(A_1\times A_2)\subseteq U\cap(A_1\times A_2)$.
+            \item Sehingga $U\cap(A_1\times A_2)\neq \emptyset\Rightarrow \overline{A_1\times A_2} = \mathcal{X}_1\times\mathcal{X}_2$. 
+            \item Karena $A_1\times A_2$ \textit{countable}, terbukti bahwa $(\mathcal{X},\mathcal{T})$ adalah ruang yang \textit{separable}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.25,frame style tile={width=\paperwidth}{wallpaper}]
+        Misal $(\mathcal{T}_1,\mathcal{X}_1)$, $(\mathcal{T}_2,\mathcal{X}_2)$ adalah ruang yang \textit{first countable}, dan misalkan pula $\mathcal{T}$ adalah \textit{product topology} dari $\mathcal{X}=\mathcal{X}_1\times\mathcal{X}_2$, maka $(\mathcal{X},\mathcal{T})$ adalah ruang yang \textit{first countable}.
+    \end{tcolorbox}
+    \textbf{Bukti:}
+    \begin{itemize}
+        \item Misal $(a,b)\in\mathcal{X}$ dan $\mathcal{B}_{a}$, $\mathcal{B}_{b}$ adalah basis lokal pada masing-masing $a$ dan $b$ yang \textit{countable}.
+        \item Definisikan $\mathcal{B}_{(a,b)} = \mathcal{B}_{a}\times\mathcal{B}_{b}$, maka $\mathcal{B}_{(a,b)}$ \textit{countable}.
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+        \begin{itemize}
+            \item Misal $U$ adalah lingkungan dari $(a,b)$, maka terdapat $U_1\in\mathcal{T}_1$ dan $U_2\in\mathcal{T}_2$ sedemikian sehingga $U_1\times U_2\subseteq U$ dan $(a,b)\in U_1\times U_2$.
+            \item Berdasarkan definisi basis lokal terdapat $B_1\in \mathcal{B}_a$ dan $B_2\in\mathcal{B}_b$ sedemikian sehingga $a\in B_1$, $b\in B_2$ dan $B_1\subseteq U_1$, $B_2\subseteq U_2$.
+            \item Perhatikan bahwa\\
+            $(a,b) \in B_1\times B_2 \subseteq U_1\times U_2 \subseteq U$.
+            \item Maka, $\mathcal{B}_{(a,b)}$ adalah basis lokal yang \textit{countable} dari $(a,b)$. Sehingga terbukti $(\mathcal{X}, \mathcal{T})$ adalah ruang yang \textit{first countable}.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.26,frame style tile = {width=\paperwidth}{wallpaper}]
+        Misal $(\mathcal{T}_1,\mathcal{X}_1)$, $(\mathcal{T}_2,\mathcal{X}_2)$ adalah ruang yang \textit{second countable}, dan misalkan pula $\mathcal{T}$ adalah \textit{product topology} dari $\mathcal{X}=\mathcal{X}_1\times\mathcal{X}_2$, maka $(\mathcal{X}, \mathcal{T})$ adalah ruang yang \textit{second countable}.
+    \end{tcolorbox}
+    \textbf{Bukti:}
+    \begin{itemize}
+        \item Misal $\mathcal{B}_1$, $\mathcal{B}_2$ adalah basis yang \textit{countable} pada masing-masing $\mathcal{T}_1$ dan $\mathcal{T}_2$
+        \item Definisikan $\mathcal{B} = \mathcal{B}_1 \times \mathcal{B}_2$, maka $\mathcal{B}$ \textit{countable}.
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat Topologi}
+        \begin{itemize}
+            \item Misal $(a_1,a_2)\in \mathcal{X}$ dan $U$ adalah lingkungan dari $(a_1,a_2)$, maka terdapat $U_1\in \mathcal{T}_1$ dan $U_2\in \mathcal{T}_2$ sedemikian sehingga $U_1\times U_2\subseteq U$ dan $(a_1,a_2)\in U_1\times U_2$.
+            \item Oleh karenanya $a_1\in U_1$ dan $a_2\in U_2$, maka terdapat $B_1\in \mathcal{B}_1$, $B_2\in \mathcal{B}_2$ sedemikian sehingga $B_1\subseteq U_1$, $B_2\subseteq U_2$ dan $a_1\in B_1$, $a_2\in B_2$.
+            \item Perhatikan bahwa\\
+            $(a_1,a_2)\in B_1\times B_2\subseteq U_1\times U_2\subseteq U\Rightarrow (a_1,a_2)\in B_1\times B_2\subseteq U$.\\
+            Berdasarkan Teorema 1.11 $\mathcal{B}$ adalah basis bagi $\mathcal{T}$.
+            \item Terbukti bahwa $(\mathcal{X},\mathcal{T})$ adalah ruang yang \textit{second countable}.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema terkait sifat topologi}
+        \begin{tcolorbox}[enhanced,title=Teorema 2.27,frame style tile={width=\paperwidth}{wallpaper}]
+        Misal $(\nX_1,\nT_1), (\nX_2,\nT_2), (\nY_1\nU_1), (\nY_2,\nU_2)$ dan $(\nZ,\nV)$ adalah ruang topologi. Misalkan pula $f:\nX_1\to\nY_1$, $g:\nX_2\to\nY_2$, dan $F:\nY_1\times\nY_2\to\nZ$ adalah fungsi yang kontinu. Maka, fungsi $G:\nX_1\times\nX_2\to\nZ$ yang didefinisikan sebagai $G(x_1,x_2) = F(f(x_1),g(x_2))$ adalah fungsi yang kontinu.
+        \end{tcolorbox}
+        \textbf{Bukti:}
+        Lihat Exercise 16.
+    \end{frame}
+    
+    \section{Product Topology}
+    \begin{frame}{Product Topology}
+        \begin{tcolorbox}[enhanced,title=\textbf{Box Topology}, frame style tile={width=\paperwidth}{wallpaper}]
+            Misalkan $\{(\mathcal{X}_{\alpha}, \mathcal{T}_{\alpha}):\alpha\in\Lambda\}$ adalah keluarga berindeks dari ruang topologi. Misalkan $\mathcal{B}$ adalah semua himpunan dengan bentuk $\prod_{\alpha\in\Lambda} U_\alpha$, di mana $U_\alpha\in\mathcal{T}_\alpha$ untuk setiap $\alpha\in\Lambda$. Maka $\mathcal{B}$ adalah basis topologi pada $\prod_{\alpha\in\Lambda} \mathcal{X}_\alpha$ (Bukti pada slide berikutnya). Topologi yang dibangun oleh $\mathcal{B}$ disebut dengan \textbf{\textit{box topology}}.
+        \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{itemize}
+            \item Perhatikan bahwa\\ $\bigcup\{U: U \in \prod_{\alpha\in\Lambda} \mathcal{T}_\alpha\}$\\$= \prod_{\alpha\in\Lambda} \mathcal{X}_\alpha\bigcup\{U : U\in\prod_{\alpha\in\Lambda}\mathcal{T}_\alpha\setminus \prod_{\alpha\in\Lambda} \mathcal{X}_\alpha\}=\prod_{\alpha\in\Lambda} \mathcal{X}_\alpha$.
+            \item Misal $B_1 = \prod_{\alpha\in\Lambda} U_\alpha$ dan $B_2 = \prod_{\alpha\in\Lambda}V_\alpha$ di mana $U_\alpha\in\mathcal{T}_\alpha$ dan $V_\alpha\in\mathcal{T}_\alpha$ untuk setiap $\alpha\in\Lambda$.
+            \item Misal $\langle a_\alpha\rangle_{\alpha\in\Lambda}\in B_1\cap B_2$, sehingga $a_\alpha\in U_\alpha$ dan $a_\alpha\in V_\alpha$ untuk setiap $\alpha\in\Lambda$. Maka, diperoleh $a_\alpha\in U_\alpha\cap V_\alpha$.
+            \item Karena $U_\alpha\in\mathcal{T}_\alpha$ dan $V_\alpha\in\mathcal{T}_\alpha$, maka $U_\alpha\cap V_\alpha\in\mathcal{T}_\alpha$.
+            \item Definisikan $B = \prod_{\alpha}U_\alpha\cap V_\alpha$. Jelas bahwa $\langle a_\alpha\rangle_{\alpha\in\Lambda}\in B$. Ambil sembarang $\langle b_\alpha\rangle_{\alpha\in\Lambda}\in B$. Maka, $b_\alpha\in U_\alpha\cap V_\alpha\Rightarrow B\subseteq B_1\cap B_2$.
+            \item Berdasarkan Teorema 1.8 $\mathcal{B}$ adalah basis topologi pada $\prod_{\alpha\in\Lambda} \mathcal{X}_\alpha$
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{tcolorbox}[enhanced,title=\textbf{Projection Mapping},frame style tile={width=\paperwidth}{wallpaper}]
+            Misalkan $\{\mathcal{X}_{\alpha}:\alpha\in\Lambda\}$ adalah keluarga berindeks dari himpunan dan misalkan pula $\beta\in\Lambda$. \textbf{Projection Mapping} yang terkait dengan $\beta$ adalah fungsi $\pi_\beta: \prod_{\alpha\in\Lambda} \mathcal{X}\to\mathcal{X}_\beta$ di mana $\pi_\beta(\langle x_\alpha\rangle_{\alpha}) = x_\beta$.
+        \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+        \begin{tcolorbox}[enhanced,title=Contoh,frame style tile = {width=\paperwidth}{wallpaper}]
+            Misal $\Lambda = \{1,2\}$ dan $\mathcal{X}_1 = \mathcal{X}_2 = \mathbb{R}$. Maka, \textit{projection mapping} $\pi_1 : \mathbb{R}\times\mathbb{R}\to\mathbb{R}$ adalah $\pi_1(x,y) = x$. Jika $A$ adalah interval buka $A = (1,2)$, maka $\pi_1^{-1}(A) = A\times\mathbb{R}$.
+        \end{tcolorbox}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \includegraphics[scale=0.2]{pembagian/figure 2.5.png}
+        \end{column}
+    \end{columns}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+        \begin{tcolorbox}[enhanced, title=Contoh, frame style tile = {width=\paperwidth}{wallpaper}]
+            Misal $\Lambda = \{1,2,3\}$ dan $\mathcal{X}_1 = \mathcal{X}_2 = \nX_3 = \mathbb{R}$. Maka, \textit{projection mapping} $\pi_1 : \mathbb{R}\times\mathbb{R}\times\to\mathbb{R}$ adalah $\pi_1(x,y,z) = x$. Jika $A$ adalah interval buka $A = [3,4]$, maka $\pi_1^{-1}(A) = A\times\mathbb{R}\times\R$.
+        \end{tcolorbox}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \includegraphics[scale=0.3]{pembagian/figure 2.6.png}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+            \item Secara umum, jika $A_\beta\in\nX_\beta$, maka $\pi_\beta^{-1}(A_\beta) = \prod_{\alpha\in\Lambda} B_\alpha$ di mana $B_\beta = A_\beta$ dan $B_\alpha = \nX_\beta$ untuk setiap $\alpha\neq\beta$ (Bukti pada slide berikutnya).
+            \item Jelas bahwa $\pi_\beta^{-1}(\nX_\beta) = \prod_{\alpha\in\Lambda} \nX_\alpha$.
+        \end{itemize} 
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{itemize}
+            \item \textbf{Note:} $\nX = \prod_{\alpha\in\Lambda} \nX_\alpha$
+            \item Perhatikan bahwa $\pi_{\beta}^{-1}(A_\beta) = \{x : x\in \nX, \pi_\beta(x)\in A_\beta\}$.
+            \item Misalkan $a_\beta\in A_\beta$ dan $x = \langle x_\alpha\rangle_\alpha\in\nX$ di mana $x_\beta = a_\beta$ dan $x_\alpha\in \nX_\alpha$ untuk setiap $\alpha\neq\beta$.
+            \item Maka $x\in\prod_{\alpha\in\Lambda} U_\alpha$ di mana $U_\beta = A_\beta$ dan $U_\alpha = \nX_\alpha$ untuk setiap $\alpha\neq\beta$.
+            \item Perhatikan pula bahwa $\pi_\beta(x) = x_\beta = a_\beta$.
+            \item Karena $x_\beta = a_\beta\in A_\beta$, maka $\pi_{\beta}^{-1}(A_\beta) = \prod_{\alpha\in\Lambda} U_\alpha$ di mana $U_\beta = A_\beta$ dan $U_\alpha = \nX_\alpha$ untuk setiap $\alpha\neq\beta$.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{tcolorbox}[enhanced,title=Product Topology,frame style tile = {width=\paperwidth}{wallpaper}]
+            Misalkan $\{(\nX_\alpha,\nT_\alpha):\alpha\in\Lambda\}$ adalah keluarga berindeks dari ruang topologi. Untuk tiap $\alpha\in\Lambda$, definisikan $\nS_\alpha = \{\pi_\alpha^{-1}(U_\alpha):U_\alpha\in\nT_\alpha\}$ dan $\nS = \bigcup_{\alpha\in\Lambda} \nS_\alpha$. Maka $\nS$ adalah subbasis untuk suatu topologi $\nT$ pada $\prod_{\alpha\in\Lambda} \nX_\alpha$, dan $\nT$ disebut sebagai \textbf{product topology}. Ruang topologi $(\prod_{\alpha\in\Lambda}\nX_\alpha,\nT)$ disebut sebagai \textbf{product space}.
+        \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Teorema Product Topology}
+        \begin{tcolorbox}[enhanced,title=Teorema 2.28,frame style tile={width=\paperwidth}{wallpaper}]
+            Misal $\{(\nX_\alpha,\nT_\alpha): \alpha\in\Lambda\}$ adalah keluarga berindeks dari ruang topologi. Koleksi semua himpunan dalam bentuk $\prod_{\alpha\in\Lambda}U_\alpha$, di mana $U_\alpha\in\nT_\alpha$ untuk setiap $\alpha\in\Lambda$ dan $U_\alpha = \nX_\alpha$ untuk semua kecuali sejumlah hingga anggota $\Lambda$ adalah basis untuk \textit{product topology} pada $\prod_{\alpha\in\Lambda}\nX_\alpha$.
+        \end{tcolorbox}
+        \textbf{Bukti:}
+        \begin{itemize}
+            \item Misal $\nB'$ adalah basis yang dibentuk oleh $\nS$, yaitu subbasis dari \textit{product topology}. Koleksi $\nB'$ mengandung semua irisan berhingga dari anggota di $\nS$.
+            \item Karena untuk setiap $\alpha\in\Lambda$, $\pi_\alpha^{-1}(U_\alpha)\cap\pi_\alpha^{-1}(V_\alpha) = \pi_{\alpha}^{-1}(U_\alpha\cap V_\alpha)$, irisan dari berhingga anggota $\nS_\alpha$ adalah anggota $\nS_\alpha$.
+            \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Teorema Product Topology}
+        \begin{itemize}
+            \item Sehingga tiap anggota dari $\nB'$ yang bukan anggota $\nS$ diperoleh dengan mengiris anggota dari $\nS_\alpha$ yang berbeda.
+            \item Oleh karenanya kita dapat menuliskan anggota $\nB'$ yang bukan anggota $\nS$ sebagai berikut:
+            \item Misal $\{\beta_1,\beta_2,\ldots,\beta_n\}$ adalah himpunan berhingga dari anggota yang berbeda pada $\Lambda$, dan untuk setiap $i = 1,2,\ldots,n$ misalkan $U_{\beta_i}\in\nT_{\beta}$. Maka $B = \bigcap_{i = 1}^{n}\pi_\beta^{-1}(U_{\beta_i})$ adalah anggota dari $\nB'$.
+            \item Pada Exercise 3 dapat dibuktikan bahwa $B = \prod_{\alpha\in\Lambda}B_\alpha$ di mana $B_\beta = U_{\beta_i}$ untuk setiap $i = 1,2,\ldots,n$ dan $B_\alpha = \nX_\alpha$ untuk setiap $\alpha$ yang berbeda dari $\beta_1,\beta_2,\ldots,\beta_n$.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{tcolorbox}[enhanced,title=Contoh,frame style tile={width=\paperwidth}{wallpaper}]
+            Untuk setiap $n\in\N$ misalkan $\nX_n = \{1,2\}$ dan misalkan $\nT_n$ adalah topoogi diskrit dari $\nX_n$. Misalkan pula $\prod_{n\in\N}\nX_n$, $\nT$ adalah \textit{product topology} dari $\nX$ dan misalkan pula $\nU$ adalah \textit{box topology} dari $\nX$. Maka, $\nT\neq\nX$
+        \end{tcolorbox}
+        \textbf{Analisis:}\\
+        \begin{itemize}
+            \item Misalkan $x\in\nX$ di mana $x_n = 1$ untuk setiap $n\in\N$. Maka $\{x\}\in\nU$.
+            \item Ambil sembarang lingkungan $U$ dari $x$. Maka terdapat $B$, yaitu basis dari $\nT$ yang dideskripiskan pada Teorema 2.28 sedemikian sehingga $x\in B$ dan $B\subseteq U$.
+        \end{itemize} 
+    \end{frame}
+    
+    \begin{frame}{Product Topology}
+        \begin{itemize}
+            \item Karena $B = \prod_{n\in\N} U_n$, di mana $U_n=\nX_n$ untuk semua kecuali sejumlah hingga anggota dari $\N$, maka terdapat $N$ sedemikian sehingga $n>N$, maka $U_n = \nX_n$.
+            \item Misalkan $y\in\nX$ di mana $y_n = 1$ untuk setiap $n\leq N$ dan $y_n = 2$ unutuk setiap $n>N$. Maka $y\in B$. Sehingga $\{x\} \notin \nT$.
+        \end{itemize}
+    \end{frame}

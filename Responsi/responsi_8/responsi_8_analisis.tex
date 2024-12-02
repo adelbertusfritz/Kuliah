@@ -1,0 +1,284 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={15cm, 20cm},
+ }
+\usepackage{graphicx}
+\input{packages.tex}
+
+\title{Responsi 8}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{Responsi 8 Analisis 1}
+    \textbf{Tim Asisten Dosen}
+\end{flushright}
+
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+
+
+% \begin{center}
+% \textbf{\large{SOAL}}
+% \end{center}
+% \begin{enumerate}[leftmargin=*, label={\arabic*}.]
+% \item Buktikan bahwa limit dari fungsi berikut ada. Gunakan definisi 
+% limit fungsi untuk menjelaskan jawaban kalian.
+% \[
+%     \lim_{x\to 4}\frac{4-x}{2-\sqrt{x}}
+% \]
+
+% \item Buktikan barisan $(x_n)$ berikut adalah barisan kontraktif.
+% \[
+%     0 < x_1 < 1, \quad x_{n+1}=\frac{1}{10}(x_n^5+1),\, n\geq 1
+% \]
+
+% \item Misalkan $f$ adalah fungsi bernilai real di $(0,1)$ sedemikian sehingga $\ds\lim_{x\to 0}f(x)=0$
+% \\dan $\ds\lim_{x\to 0}\frac{\oio*{f(x)-f(\frac{x}{2})}}{x}=0$
+% \begin{enumerate}
+%     \item Tunjukkanlah bahwa untuk $\epsilon > 0$ dan bilangan asli $n$, berlaku
+%     \[
+%     \abs*{f(x)-f\oio*{\frac{x}{2^n}}} < 2\epsilon x
+%     \]
+%     \item Hitunglah nilai dari $\ds\lim_{x\to 0}\frac{f(x)}{x}$
+% \end{enumerate}
+
+% \item Buktikan bahwa barisan $\oio*{\frac{\sqrt{2n^2+1}}{\sqrt{n}}}$
+% itu divergen sejati.
+
+% \item Misalkan fungsi $f\colon \R \to \R$ kontinu pada $\R$ sedemikian sehingga $f(x)=0$ untuk
+% semua bilangan irasional $x$. Apakah $f(x)=0, \forall x\in\R$? Jelaskan jawaban Anda!
+
+% \item Misalkan $f\colon \R \to \R$ adalah fungsi yang didefinisikan sebagai
+% \[
+%     f(x):=\begin{cases}
+%         \abs{3x}, &\text{jika $x$ rasional}\\
+%         x+8, &\text{jika $x$ irasional}
+%     \end{cases}
+% \]
+% Tentukan titik-titik dimana fungsi $f$ kontinu dan titik-titik dimana fungsi $f$ diskontinu.
+% Jelaskan jawaban kalian. 
+
+% \end{enumerate}
+
+% \vspace{0.2cm}\hrule height 1pt
+
+
+% \newpage
+\begin{center}
+\textbf{\large{PEMBAHASAN}}
+\end{center}
+\begin{enumerate}[leftmargin=*, label={\arabic*}.]
+\item Coretan: (Tebak nilai limit)
+\[
+\lim_{x\to 4} \frac{4-x}{2-\sqrt{x}}=
+\lim_{x\to 4} \frac{(2-\sqrt{x})(2+\sqrt{x})}{2-\sqrt{x}}
+\lim_{x\to 4} (2+\sqrt{x}) = 4
+\]
+Pembuktian: Adib $\lim_{x\to 4} \frac{4-x}{2-\sqrt{x}}=4$\\
+Analisis Pendahuluan:\\
+Ambil sembarang $\epsilon > 0, \exists \delta > 0? \ni \forall x, 0 < \abs{x-4}<\delta$ 
+\begin{align*}
+    \abs*{\frac{4-x}{2-\sqrt{x}}-4} &= \abs*{\frac{4-x-8+4\sqrt{x}}{2-\sqrt{x}}}
+    \\&=\abs*{\frac{4-4\sqrt{x}+x}{2-\sqrt{x}}}
+    \\&=\abs*{\frac{(2-\sqrt{x})(2-\sqrt{x})}{2-\sqrt{x}}}
+    \\&=\abs*{(2-\sqrt{x})}\abs*{\frac{2+\sqrt{x}}{2+\sqrt{x}}}
+    \\&=\abs*{\frac{4-x}{2+\sqrt{x}}}
+    \\&\leq\abs*{\frac{x-4}{2}} < \frac{\delta}{2}
+\end{align*}
+Sehingga pilih $\delta = 2\epsilon$\\
+Bukti Formal: $\lim_{x\to 4} \frac{4-x}{2-\sqrt{x}}=4$ karena\\
+$\forall \epsilon > 0, \exists \delta = 2\epsilon > 0 \ni \forall x, 0 < \abs{x-4} < \delta,$
+\[
+    \abs*{\frac{4-x}{2-\sqrt{x}}-4} \leq\abs*{\frac{x-4}{2}} < \frac{\delta}{2} = \epsilon
+\]
+\item Adib barisan $(x_n)$ berikut adalah barisan kontraktif.
+\[
+    0 < x_1 < 1, \quad x_{n+1}=\frac{1}{10}(x_n^5+1),\, n\geq 1
+\]
+Pertama akan dibuktikan $0 < x_n < 1$ untuk semua $n \in \N$ dengan induksi matematik\\
+Bukti:\\
+Base ($n=1$): Jelas dari soal $0 < x_1 < 1$\\
+Induksi: Asumsikan $0 < x_n < 1$, adib $0 < x_{n+1} < 1$\\
+Perhatikan
+\begin{align*}
+    0 < x_n < 1 & \iff 0 < x_n^5 < 1\\
+    & \iff 0 < x_n^5 + 1 < 2\\
+    & \iff 0 < \frac{1}{10}(x_n^5 + 1) < \frac{1}{5} < 1\\
+\end{align*}
+Terbukti $0 < x_n < 1$ untuk $n \in \N$\\
+Adib $(x_n)$ kontraktif.\\
+Perhatikan lagi
+\begin{align*}
+    |x_{n+2} - x_{n+1}| &= \abs*{\frac{1}{10}(x_{n+1}^5+1)-\frac{1}{10}(x_n^5+1)}\\
+    &= \frac{1}{10}\abs*{x_{n+1}^5+1-x_n^5-1}\\
+    &= \frac{1}{10}\abs*{x_{n+1}^5-x_n^5}\\
+    &< \frac{1}{10}\abs{5}\abs*{x_{n+1}-x_n}\quad (**)\\
+    &= \frac{1}{2}\abs*{x_{n+1}-x_n}
+\end{align*}
+Maka $(x_n)$ barisan kontraktif dengan $C=\frac{1}{2}$
+\begin{align*}
+    (**) &\abs*{x_{n+1}^5-x_n^5}\\
+    =\, & \abs{x_{n+1}-x_n}\abs{x_{n+1}^4+x_{n+1}^3x_n+x_{n+1}^2x_n^2+x_{n+1}x_n^3+x_n^4}\\
+    &\text{ingat $0 < x_n < 1$ untuk semua $n \in \N$}\\
+    <\, & \abs{x_{n+1}-x_n}\abs{1+1+1+1+1} = |5|\abs{x_{n+1}-x_n}
+\end{align*}
+
+\item Misalkan $f$ adalah fungsi bernilai real di $(0,1)$ sedemikian sehingga $\ds\lim_{x\to 0}f(x)=0$
+\\dan $\ds\lim_{x\to 0}\frac{\oio*{f(x)-f(\frac{x}{2})}}{x}=0$
+\begin{enumerate}
+    \item Adib untuk $\epsilon > 0$ dan $n \in \N$, berlaku
+    \[\abs*{f(x)-f\oio*{\frac{x}{2^n}}} < 2\epsilon x\]
+    Ambil sembarang $\epsilon > 0$. Karena $\ds\lim_{x\to 0}\frac{\oio*{f(x)-f(\frac{x}{2})}}{x}=0$ maka
+    \begin{align*}
+        &\abs*{\frac{\oio*{f(x)-f(\frac{x}{2})}}{x}} < \epsilon\\
+        \iff &\abs*{f(x)-f\oio*{\frac{x}{2}}} < \epsilon\abs{x}\\
+        \iff &\abs*{f(x)-f\oio*{\frac{x}{2}}} < \epsilon x \quad\text{Karena $x>0$}\\
+        &\text{Subtitusi x dengan x/2 diperoleh} \\
+        &\abs*{f\oio*{\frac{x}{2}}-f\oio*{\frac{x}{4}}} < \frac{\epsilon x}{2} \\
+        &\text{Sehingga secara umum}\\
+        &\abs*{f\oio*{\frac{x}{2^n}}-f\oio*{\frac{x}{2^{n+1}}}} < \frac{\epsilon x}{2^n} 
+    \end{align*} 
+    Sekarang perhatikan bahwa
+    \begin{align*}
+        &\abs*{f(x)-f\oio*{\frac{x}{2^n}}}\\ 
+        =\,&  \abs*{f(x)-f\oio*{\frac{x}{2}}+f\oio*{\frac{x}{2}}-f\oio*{\frac{x}{2^n}}} \\
+        =\,&\abs*{f(x)-f\oio*{\frac{x}{2}}+f\oio*{\frac{x}{2}}+\dots-f\oio*{\frac{x}{2^{n-1}}}+f\oio*{\frac{x}{2^{n-1}}}-f\oio*{\frac{x}{2^n}}} \\
+        \leq\,&\abs*{f(x)-f\oio*{\frac{x}{2}}}+\abs*{f\oio*{\frac{x}{2}}-f\oio*{\frac{x}{4}}}+\dots+\abs*{f\oio*{\frac{x}{2^{n-1}}}-f\oio*{\frac{x}{2^n}}}\\
+        \leq\,& \epsilon x + \frac{ex}{2} + \dots + \frac{ex}{2^{n-1}}\\
+        =\,&\epsilon x(1+\frac{1}{2}+\dots+\frac{1}{2^{n-1}})\\
+        \leq\,& \epsilon x \sum_{k=0}^{\infty}\frac{1}{2^k} = \epsilon x \frac{1}{1-\frac{1}{2}} = 2\epsilon x
+    \end{align*}
+    Terbukti bahwa $\ds\abs*{f(x)-f\oio*{\frac{x}{2^n}}} < 2\epsilon x$
+    \item Akan dihitung nilai dari $\lim_{x\to 0}\frac{f(x)}{x}$
+    \\Setelah memperoleh jawaban sebelumnya, pandang barisan $(x_n)$ dengan
+    \[
+        x_n = \abs*{f(x)-f\oio*{\frac{x}{2^n}}}
+    \]
+    dan terbukti bahwa $\abs*{f(x)-f\oio*{\frac{x}{2^n}}} < 2\epsilon x$\\
+    sehingga $\lim\oio*{\abs*{f(x)-f\oio*{\frac{x}{2^n}}}} < \lim\oio*{2\epsilon x}$\\
+    perhatikan saat $n \to \infty$, $\frac{x}{2^n} \to 0$\\
+    karena $\lim_{x\to 0} f(x)=0$,
+    berdasarkan kriteria limit barisan, $\oio*{f\oio*{\frac{x}{2^n}}} \to 0$.\\
+    Sehingga $\lim\oio*{\abs*{f(x)-f\oio*{\frac{x}{2^n}}}} = |f(x)| < \lim\oio*{2\epsilon x} = 2\epsilon x$\\
+    Diperoleh $|f(x)| < 2ex \iff \abs*{\frac{f(x)}{x}} < 2e$.\\
+    Dengan memilih $\delta = \frac{\epsilon}{2}$ maka $\lim_{x\to 0}\frac{f(x)}{x}=0$\\
+    $\therefore$ Berdasarkan analisa ini nilai $\lim_{x\to 0}\frac{f(x)}{x}=0$
+\end{enumerate}
+\item Adib barisan $\oio*{\frac{\sqrt{2n^2+1}}{\sqrt{n}}}$ divergen sejati.
+
+Analisis Pendahuluan:\\
+Ambil sembarang $\alpha \in \R$. Akan dicari $K(\alpha)\in \N$ \\
+sehingga $\forall n \geq K(\alpha), \frac{\sqrt{2n^2+1}}{\sqrt{n}} > \alpha$\\
+\\Perhatikan
+\begin{align*}
+    \frac{\sqrt{2n^2+1}}{\sqrt{n}} > \frac{\sqrt{2n^2}}{\sqrt{n}} > \frac{\sqrt{n^2}}{\sqrt{n}} = \sqrt{n} > \sqrt{K(\alpha)} > \alpha
+\end{align*}
+Sehingga pilih $K(\alpha) > \alpha^2$ (Dijamin Sifat Archimedes)
+\\Bukti Formal: $\oio*{\frac{\sqrt{2n^2+1}}{\sqrt{n}}}$ divergen sejati karena \\
+$\forall \alpha > \R, \exists K(\alpha) > \alpha^2 \in \N$ (Dijamin Sifat Archimedes) sehingga
+\\$\forall n \geq K(\alpha), \ds \frac{\sqrt{2n^2+1}}{\sqrt{n}} > \sqrt{n} > \sqrt{K(\alpha)} > \alpha$
+
+\item Misalkan fungsi $f\colon \R \to \R$ kontinu pada $\R$ sedemikian sehingga $f(x)=0$ untuk
+semua bilangan irasional $x$.
+
+Klaim: $f(x)=0, \forall x \in \R$.\\
+Bukti: (Dengan kontradiksi) Andaikan bahwa klaim salah.
+\begin{itemize}
+    \item Maka ada $c \in \R$, sehingga $f(c)\neq 0$.
+    \item Karena $f(x)=0$ untuk semua $x$ irasional, $c$ adalah bilangan rasional.
+    \item Kontruksi sebuah barisan $(x_n)$ terdiri dari bilangan irasional yg konvergen ke $c$ (Dijamin Density Theorem).
+    \item Maka barisan $(f(x_n))$ konvergen ke $0$.
+    \item Disisi lain $f$ kontinu maka dengan kriteria barisan kontinu barisan $(f(x_n))$ konvergen ke $f(c)$.
+    \item Sehingga $f(c) = \lim((f(x_n))) = 0$.
+    \item Ini berkontradiksi dengan poin pertama.
+    \item Pengandaian salah maka klaim benar.
+\end{itemize}
+
+
+
+\item Misalkan $f\colon \R \to \R$ adalah fungsi yang didefinisikan sebagai
+\[
+    f(x):=\begin{cases}
+        \abs{3x}, &\text{jika $x$ rasional}\\
+        x+8, &\text{jika $x$ irasional}
+    \end{cases}
+\]
+Akan ditentukan titik kontinu (Coretan):\\
+Titik kontinu terjadi ketika $f(x)$ bernilai sama untuk $x$ rasional dan irasional.\\
+Sehingga
+\begin{align*}
+    |3x| = x+8 \iff -3x = x+8 \text{ atau } 3x = x+8 \iff x = -2 \text{ atau } x=4
+\end{align*}
+Pembuktian:\\
+Akan dibuktikan $f$ kontinu di $x=-2$ ($f(-2)=6$).\\
+Analisis Pendahuluan:\\
+Ambil sembarang $\epsilon > 0$, akan dicari $\delta$ sehingga $\forall x, \abs{x+2}<\delta$,\\
+Untuk $x$ rasional
+\begin{align*}
+    |f(x)-6| &= \abs{\abs{3x}-6} \\
+    &= \abs{\abs{3x}-\abs{-6}}\\
+    &\leq |3x-(-6)|\\
+    &= |3x+6|\\
+    &=3|x+2|
+\end{align*}
+untuk $x$ rasional pilih $\delta = \epsilon/3$.
+
+Sekarang untuk $x$ irasional
+\begin{align*}
+    |f(x)-6| &= \abs{x+8-6}=|x+2|
+\end{align*}
+untuk $x$ irasional pilih $\delta = \epsilon$.
+
+Sehingga untuk $x \in \R$, pilih $\delta = \min\set{\epsilon,\epsilon/3}=\epsilon/3$.\\
+Bukti Formal: $f$ kontinu di $x=-2$ karena\\
+$\forall \epsilon > 0, \exists \delta = \epsilon/3 \ni \forall x, \abs{x+2} < \delta, \abs{f(x)-6} < \epsilon$
+
+Akan dibuktikan $f$ kontinu di $x=4$ ($f(4)=12$).\\
+Analisis Pendahuluan:\\
+Ambil sembarang $\epsilon > 0$, akan dicari $\delta$ sehingga $\forall x, \abs{x-4}<\delta$,\\
+Untuk $x$ rasional
+\begin{align*}
+    |f(x)-12| &= \abs{\abs{3x}-12} \\
+    &= \abs{\abs{3x}-\abs{12}}\\
+    &\leq |3x-12|\\
+    &=3|x-4|
+\end{align*}
+untuk $x$ rasional pilih $\delta = \epsilon/3$.
+
+Sekarang untuk $x$ irasional
+\begin{align*}
+    |f(x)-12| &= \abs{x+8-12}=|x-4|
+\end{align*}
+untuk $x$ irasional pilih $\delta = \epsilon$.
+
+Sehingga untuk $x \in \R$, pilih $\delta = \min\set{\epsilon,\epsilon/3}=\epsilon/3$.\\
+Bukti Formal: $f$ kontinu di $x=4$ karena\\
+$\forall \epsilon > 0, \exists \delta = \epsilon/3 \ni \forall x, \abs{x-4} < \delta, \abs{f(x)-12} < \epsilon$
+
+Akan dibuktikan $f$ tidak kontinu di $c$ rasional dengan $c\neq -2$ dan $c\neq 4$.\\
+Bukti: Gunakan kriteria diskontinuitas.
+\begin{itemize}
+    \item Konstruksi barisan $(x_n)$ yang terdiri dari bilangan irasional yang konvergen ke $c$. (Dijamin Teorema Densitas).
+    \item Maka barisan $(f(x_n))$ konvergen ke $c+8$
+    \item Tetapi $f(c) = |3c|$ dan karena $c\neq -2$ dan $c\neq 4$ maka $f(c) = |3x| \neq c+8 = \lim((f(x_n)))$
+    \item Berdasarkan kriteria diskontinuitas, maka $f$ tidak kontinu di $c$ rasional dengan $c\neq -2$ dan $c\neq 4$.
+\end{itemize}
+
+Akan dibuktikan $f$ tidak kontinu di $c$ irasional.\\
+Bukti: Gunakan kriteria diskontinuitas.
+\begin{itemize}
+    \item Konstruksi barisan $(x_n)$ yang terdiri dari bilangan rasional yang konvergen ke $c$. (Dijamin Teorema Densitas).
+    \item Maka barisan $(f(x_n))$ konvergen ke $|3c|$
+    \item Tetapi $f(c) = c+8$ dan $|3c| = c+8$ saat $c=-2$ atau $c=4$ (rasional)
+    \item $c$ irasional sehingga $f(c) = c+8 \neq |3c| = \lim(f(x_n))$.
+    \item Berdasarkan kriteria diskontinuitas, maka $f$ tidak kontinu di $c$ irasional.
+\end{itemize}
+\end{enumerate}
+
+\end{document}

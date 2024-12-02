@@ -1,0 +1,298 @@
+\begin{frame}{Definisi Product Topology}
+    \begin{tcolorbox}[title=Definisi]
+        Misalkan $(\mathcal{X},\mathcal{T}_1)$, $(\mathcal{Y},\mathcal{T}_2)$ adalah Ruang Topologi, dan misalkan pula $\mathcal{B} = \{U \times V : U \in \mathcal{T}_{1} $ dan $ V \in \mathcal{T}_{2}\} $. \textbf{Product Topology} dari $\mathcal{X}\times \mathcal{Y}$ adalah topologi $\mathcal{T}$ yang memiliki basis $\mathcal{B}$ dan $(\mathcal{X} \times \mathcal{Y}, \mathcal{T})$ disebut sebagai \textbf{product space} dari $\mathcal{X}$ dan $\mathcal{Y}$
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Definisi Product Topology}
+    \begin{tcolorbox}[title=Example 7]
+        Misalkan $\mathcal{T}$ merupakan \textit{usual topologi} di $\R$, misalkan $U = \{ x \in \R : 1 < x < 2 $ atau $ 3 < x <4 \}$ dan misalkan $V = \{x \in \R : 2 < x < 3, 3.5 < x < 4, $ atau $ 5 < x < 6\}$. Maka $U,V \in \mathcal{T}$ dan $U \times V$ adalah anggota dari product topology yang ditunjukkan pada gambar 2.2
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3\linewidth]{pembagian/Figure 2.2.png}
+        \caption{2.2}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Definisi Product Topology}
+    \begin{tcolorbox}[title=Catatan ]
+        Perhatikan bahwa gabungan dari dua anggota basis $\mathcal{B}$ (dimana $\mathcal{B}$ didefinisikan sebagai definisi product topology) tidak perlu menjadi anggota dari $\mathcal{B}$. Misalkan $U_1 = \{x \in \R : 1 < x < 2\}$ , $V_1 = \{x \in \R : 1 < x < 2\}$ , $U_2 = \{x \in \R : 2 < x < 3\}$, dan $V_2= \{ x \in \R : 3 < x < 4\}$ Maka $(U_1 \times V_1) \cup (U_2 \times V_2)$ yang ditunjukkan pada gambar 2.3
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3\linewidth]{pembagian/Figure 2.3.png}
+        \caption{2.3}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Teorema 2.1.6}
+    \begin{tcolorbox}[title=Teorema 2.1.6]
+        Misalkan $(\mathcal{X}_{1},d_1)$ dan $(\mathcal{X}_{2},d_2)$ merupakan ruang metrik. Untuk setiap $i = 1,2$ misalkan $\mathcal{T}_{i}$ adalah topologi di $\mathcal{X}_{i}$ yang dibangun oleh $d_i$ dan misalkan $\mathcal{T}$ menyatakan \textit{product topology} di $\mathcal{X} = \mathcal{X}_{1} \times \mathcal{X}_{2}$. Lebih lanjut misalkan $\mathcal{U}$ menyatakan topologi di $\mathcal{X}$ yang dibangun oleh metrik perkalian $d$. Maka $\mathcal{T} = \mathcal{U}$
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.1.6}
+    \begin{tcolorbox}[title=Bukti Teorema 2.1.6]
+    \begin{itemize}
+        \item Misalkan \( V \in \mathcal{T} \) dan \( (a_1, a_2) \in V \). Maka untuk setiap \( i = 1, 2 \), terdapat \( U_i \in \mathcal{T}_i \) sedemikian sehingga \( (a_1, a_2) \in U_1 \times U_2 \subseteq V \).
+        \item Karena \(\mathcal{T}_i\) adalah topologi yang dibangun oleh \( d_i \), untuk setiap \( i = 1, 2 \) terdapat \( \varepsilon_i > 0 \) sedemikian sehingga \( B_{d_i}(a_i, \varepsilon_i) \subseteq U_i \).
+        \item Misalkan \( \varepsilon = \min\{\varepsilon_1, \varepsilon_2\} \). Maka, jika \( (x_1, x_2) \in X \) dan \( d((a_1, a_2), (x_1, x_2)) < \varepsilon \), \( d_i(a_i, x_i) < \varepsilon \leq \varepsilon_i \) untuk setiap \( i = 1, 2 \).
+        \item Oleh karena itu, $B_d((a_1, a_2), \varepsilon) \subseteq B_{d_1}(a_1, \varepsilon_1) \times B_{d_2}(a_2, \varepsilon_2).$
+        \item Karena \( B_{d}((a_1,a_2), \varepsilon)) \in \mathcal{U} \) dan \( (a_1, a_2) \in B_d((a_1, a_2), \varepsilon) \subseteq V \), dengan \( V \in \mathcal{U} \). Maka \( \mathcal{T} \subseteq \mathcal{U} \).
+    \end{itemize}
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Bukti Teorema 2.1.6}
+    \begin{tcolorbox}[title=Bukti Teorema 2.1.6]
+    \begin{itemize}
+        \item Misalkan \( V \in \mathcal{U} \) dan \( (a_1, a_2) \in V \). Maka ada \( \varepsilon > 0 \) sedemikian sehingga \( B_d((a_1, a_2), \varepsilon) \subseteq V \). 
+        \item Sekarang \( U = B_{d_1}(a_1, \frac{\sqrt{2}}{2} \varepsilon) \times B_{d_2}(a_2, \frac{\sqrt{2}}{2} \varepsilon) \in \mathcal{T} \) dan \( U \subseteq B_d((a_1, a_2), \varepsilon) \). 
+        \item Oleh karena itu \( V \in \mathcal{T} \) dan jadi \( \mathcal{U} \subseteq \mathcal{T} \).
+    \end{itemize}
+           
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Teorema 2.1.7}
+    \begin{tcolorbox}[title=Teorema 2.1.7]
+        Misalkan $(\mathcal{X}_{1},\mathcal{T}_1)$ dan $(\mathcal{X}_{2},\mathcal{T}_2)$ merupakan ruang topologi dan untuk setiap $i = 1,2$, misalkan $\mathcal{B}_i$ adalah basis dari $\mathcal{T}_{i}$. Maka $\mathcal{B} = \{U \times V : U \in \mathcal{B}_1$ dan $V \in \mathcal{B}_2\}$ adalah basis untuk topologi perkalian $\mathcal{T}$ di $\mathcal{X}_1 \times \mathcal{X}_2$ 
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.1.7}
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 1.11.png}
+        \caption{Teorema 1.11}
+        \label{fig:enter-label}
+    \end{figure}
+    
+    
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.1.7}
+    \begin{tcolorbox}[title=Bukti Teorema 2.1.7]
+    
+    \begin{itemize}
+        \item Misalkan \( W \in \mathcal{T} \) dan \( (x_1, x_2) \in W \). 
+        \item Berdasarkan definisi topology product, untuk setiap \( i = 1, 2 \), terdapat \( U_i \in \mathcal{T}_i \) sedemikian sehingga \( (x_1, x_2) \in U_1 \times U_2 \) dan \( U_1 \times U_2 \subseteq W \). 
+        \item Kemudian, untuk setiap \( i = 1, 2 \) terdapat \( B_i \in \mathcal{B}_i \) sedemikian sehingga \( x_i \in B_i \) dan \( B_i \subseteq U_i \). 
+        \item Oleh karena itu, \( (x_1, x_2) \in B_1 \times B_2 \) dan \( B_1 \times B_2 \subseteq W \). 
+        \item Maka, berdasarkan Teorema 1.11, \(\mathcal{B}\) adalah basis untuk \(\mathcal{T}\).
+    
+    \end{itemize}
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Contoh 8}
+    \begin{tcolorbox}[title=Contoh 8]
+        Misalkan $\mathcal{T}$ merupakan usual topology di $\R$ dan misalkan $\mathcal{U}$ merupakan lower limit topology di $\R$. Maka semua himpunan dalam bentuk $\{ (x,y) \in \R^2 : a < x < b$ dan $c < y < d \}$ (Lihat gambar 2.4) adalah basis dari product topology di $\R^2$
+    
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.3\linewidth]{pembagian/Figure 2.4.png}
+            \caption{2.4}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Teorema 2.18.}
+    \begin{tcolorbox}[title=Teorema 2.18]
+        Misalkan $(\mathcal{X}_1, \mathcal{T}_1)$ dan $(\mathcal{X}_2, \mathcal{T}_2)$ adalah ruang topologi dan misalkan $(\mathcal{X}_1 \times \mathcal{X}_2 , \mathcal{T})$ adalah product spaces. Maka projeksi $\pi_1 : \mathcal{X}_1 \times \mathcal{X}_2 \rightarrow \mathcal{X}_1$ dan  $\pi_2 : \mathcal{X}_1 \times \mathcal{X}_2 \rightarrow \mathcal{X}_2$ kontinu. product topology adalah smallest topology yang membuat kedua proyeksi tersebut kontinu.
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.18.}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 1.53.png}
+        \caption{teorema 1.53}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.18.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.18 (1/2)]
+    \begin{itemize}
+        \item Misalkan $U_i \in \mathcal{T}_i$. Maka $\pi_1^{-1}(U_1) = U_1 \times X_2$ dan $\pi_2^{-1}(U_2) = X_1 \times U_2$. 
+        \item Karena $U_1 \times X_2$ dan $X_1 \times U_2$ adalah anggota $\mathcal{T}$, menurut Teorema 1.53, $\pi_1$ dan $\pi_2$ kontinu.
+        \item Misalkan $\mathcal{U}$ adalah suatu topologi pada $X_1 \times X_2$ sehingga kedua proyeksi kontinu. Kita akan menunjukkan bahwa $\mathcal{T}$ lebih kecil daripada $\mathcal{U}$.
+        \item  Misalkan $B$ adalah anggota basis $\mathcal{B}$ (sesuai dengan definisi topologi hasil kali) untuk $\mathcal{T}$. Maka terdapat anggota $U_1$ dari $\mathcal{T}_1$ dan $U_2$ dari $\mathcal{T}_2$ sehingga $B = U_1 \times U_2$.
+        
+        
+    \end{itemize}
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.18.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.18 (2/2)]
+    \begin{itemize}
+        \item Karena $\pi_1$ dan $\pi_2$ kontinu terhadap $\mathcal{U}$, $\pi_1^{-1}(U_1)$ dan $\pi_2^{-1}(U_2)$ adalah anggota $\mathcal{U}$.
+        \item Karena $B = U_1 \times U_2 = \pi_1^{-1}(U_1) \cap \pi_2^{-1}(U_2)$, maka $B \in \mathcal{U}$.
+        \item Oleh karena itu $\mathcal{B} \subseteq \mathcal{U}$, dan karena gabungan anggota-anggota dari suatu topologi adalah anggota dari topologi tersebut, maka $\mathcal{T} \subseteq \mathcal{U}$.
+        \item Jadi $\mathcal{T}$ lebih kecil daripada $\mathcal{U}$.
+    
+    \hfill $\blacksquare$
+        
+    \end{itemize}
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Teorema 2.19.}
+    \begin{tcolorbox}[title=Teorema 2.19]
+        Misalkan $(\mathcal{X}_1, \mathcal{T}_1)$ dan $(\mathcal{X}_2, \mathcal{T}_2)$ adalah ruang topologi dan misalkan $\pi_1$ dan $\pi_2$ merupakan pemetaan proyeksi. Maka $\mathcal{Y} = \{ {\pi_1}^{-1} (U) : U \in \mathcal{T}_1\} \cup \{ {\pi_2}^{-1}(V) : V \in \mathcal{T}_2 \}$ adalah subbasis dari product topology di $\mathcal{X}_1 \times \mathcal{X}_2$.
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.19.}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 1.12.png}
+        \caption{teorema 1.12}
+        \label{fig:enter-label}
+    \end{figure}
+        
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.19.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.19 (1/2)]
+    \begin{itemize}
+        \item Jelas bahwa $X_1 \times X_2 = \bigcup \{S : S \in \mathcal{Y}\}$. 
+        \item Maka menurut Teorema 1.12, ada satu-satunya topologi $\mathcal{T}'$ pada $X_1 \times X_2$ sehingga $\mathcal{Y}$ adalah subbasis untuk $\mathcal{T}'$. 
+        \item Misalkan $\mathcal{T}$ menyatakan topologi hasil kali pada $X_1 \times X_2$. \item Karena setiap anggota $\mathcal{Y}$ termasuk dalam $\mathcal{T}$, gabungan sebarang dari irisan hingga anggota $\mathcal{Y}$ juga termasuk dalam $\mathcal{T}$. Oleh karena itu $\mathcal{T}' \subseteq \mathcal{T}$.
+        
+    \end{itemize}
+        
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.19.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.19 (2/2)]
+    \begin{itemize}
+        \item Misalkan $\mathcal{B}$ adalah basis untuk $\mathcal{T}$ sesuai dengan definisi topology product, dan misalkan $U \times V \in \mathcal{B}$. 
+        \item Karena $U \times V = \pi_1^{-1}(U) \cap \pi_2^{-1}(V)$, $U \times V$ adalah irisan dari dua anggota $\mathcal{Y}$. Maka $U \times V \in \mathcal{T}'$. 
+        \item Dari sini diperoleh bahwa $\mathcal{T} \subseteq \mathcal{T}'$.
+    
+    \hfill $\blacksquare$
+        
+    \end{itemize}
+        
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Teorema 2.20.}
+    \begin{tcolorbox}[title=Teorema 2.20]
+        Misalkan \((C, \mathcal{T}_C)\) adalah subruang dari ruang topologi \((X, \mathcal{T})\), dan \((D, \mathcal{U}_D)\) adalah subruang dari ruang topologi \((Y, \mathcal{U})\). Maka product topology pada \(C \times D\) yang ditentukan oleh \(\mathcal{T}_C\) dan \(\mathcal{U}_D\) adalah sama dengan topologi subruang pada \(C \times D\) yang ditentukan oleh topologi hasil kali pada \(X \times Y\).
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.20.}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 2.3.png}
+        \caption{teorema 2.3}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.20.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.20 (1/3)]
+    \begin{itemize}
+        \item Misalkan $\mathcal{B}$ adalah basis untuk product topology pada $X \times Y$ yang diberikan oleh definisi product topology, misalkan $\mathcal{B}_{(C \times D)}$ adalah basis untuk topologi subruang pada $C \times D$ yang diberikan oleh Teorema 2.3, dan misalkan $\mathcal{B}'$ adalah basis untuk product topology pada $C \times D$ yang diberikan oleh definisi product topology. 
+        \item Perhatikan bahwa $\mathcal{B}_{(C \times D)}$ ditentukan oleh $\mathcal{B}$, dan $\mathcal{B}'$ ditentukan oleh $\mathcal{T}_C$ dan $\mathcal{U}_D$. akan dibuktikan $\mathcal{B}_{(C \times D)} = \mathcal{B}'$.
+    \end{itemize}
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.20.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.20 (2/3)]
+    \begin{itemize}
+        \item Misalkan $M \in \mathcal{B}_{(C \times D)}$. Maka ada anggota $N$ dari $\mathcal{B}$ sedemikian sehingga $M = (C \times D) \cap N$. Kemudian, ada $U \in \mathcal{T}$ dan $V \in \mathcal{U}$ sedemikian sehingga $N = U \times V$.
+        \item Karena $C \cap U \in \mathcal{T}_C$, $D \cap V \in \mathcal{U}_D$ dan $(C \times D) \cap (U \times V) = (C \cap U) \times (D \cap V)$, maka $M \in \mathcal{B}'$.
+        \item Dengan demikian $\mathcal{B}_{(C \times D)} \subseteq \mathcal{B}'$.
+    \end{itemize}
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.20.}
+    \begin{tcolorbox}[title=Bukti Teorema 2.20 (3/3)]
+    \begin{itemize}
+        \item Sekarang misalkan $M \in \mathcal{B}'$. Maka ada $U_C \in \mathcal{T}_C$ dan $V_D \in \mathcal{U}_D$ sedemikian sehingga $M = U_C \times V_D$. Sekarang ada $U \in \mathcal{T}$ dan $V \in \mathcal{U}$ sedemikian sehingga $U_C = C \cap U$ dan $V_D = D \cap V$. 
+        \item Karena $U \times V \in \mathcal{B}$ dan $(C \cap U) \times (D \cap V) = (C \times D) \cap (U \times V)$, maka $M \in \mathcal{B}_{(C \times D)}$. 
+        \item Maka $\mathcal{B}' \subseteq \mathcal{B}_{(C \times D)}$. \(\blacksquare\)
+    \end{itemize}
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Teorema 2.21.}
+    \begin{tcolorbox}[title=Teorema 2.21]
+        Misalkan \((X, \mathcal{T})\), \((Y_1, \mathcal{U}_1)\), dan \((Y_2, \mathcal{U}_2)\) adalah ruang topologi dan misalkan \(f : X \rightarrow Y_1 \times Y_2\) adalah suatu fungsi. Maka \(f\) kontinu jika dan hanya jika \(\pi_i \circ f\) kontinu untuk setiap \(i = 1, 2\).
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.21.}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 1.54.png}
+        \caption{teorema 1.54}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.21.}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{pembagian/teorema 1.56.png}
+        \caption{teorema 1.56}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{frame}
+    
+    \begin{frame}{Bukti Teorema 2.21.}
+    \begin{tcolorbox}[title= Bukti Teorema 2.21]
+    \begin{itemize}
+        \item Misalkan $f$ kontinu. Berdasarkan Teorema 2.18, untuk setiap $i = 1, 2$, $\pi_i$ adalah kontinu. 
+        \item Maka berdasarkan Teorema 1.56, $\pi_i \circ f$ kontinu untuk setiap $i = 1, 2$.
+        \item Misalkan $\pi_i \circ f$ kontinu untuk setiap $i = 1, 2$. Misalkan $\mathcal{Y}$ adalah subbasis untuk product topology pada $Y_1 \times Y_2$ yang diberikan oleh Teorema 2.19, dan misalkan $\pi_i^{-1}(U_i) \in \mathcal{Y}$. Maka $f^{-1}(\pi_i^{-1}(U_i)) = (\pi_i \circ f)^{-1}(U_i) \in \mathcal{T}$. 
+        \item Karena $\pi_i \circ f$ kontinu, $(\pi_i \circ f)^{-1}(U_i) \in \mathcal{T}$. Maka, berdasarkan Teorema 1.54, $f$ adalah kontinu. \(\blacksquare\)
+    \end{itemize}
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    
+    \begin{frame}{Corollary 2.22}
+    \begin{tcolorbox}[title=Corrolary 2.22]
+         Misalkan $(X, \mathcal{T})$, $(Y_1, \mathcal{U}_1)$, dan $(Y_2, \mathcal{U}_2)$ adalah ruang topologi, dengan $f_1: X \rightarrow Y_1$ dan $f_2: X \rightarrow Y_2$ adalah fungsi-fungsi, dan definisikan $f: X \rightarrow Y_1 \times Y_2$ oleh $f(x) = (f_1(x), f_2(x)).$ Maka, $f$ kontinu jika dan hanya jika $f_1$ dan $f_2$ kontinu.
+    
+    
+    \end{tcolorbox}
+    \end{frame}
+    
+    \begin{frame}{Contoh 9}
+    \begin{tcolorbox}[title=Contoh 9]
+         \textbf{Contoh 9}. Misalkan $f, g: \mathbb{R} \rightarrow \mathbb{R}$ didefinisikan oleh $f(x) = x^2 + 4$ dan $g(x) = x^3 - 2x + 6$. Maka, $f$ dan $g$ adalah polinomial, sehingga keduanya adalah fungsi kontinu. Berdasarkan Corollary 2.22, fungsi $h: \mathbb{R} \rightarrow \mathbb{R} \times \mathbb{R}$ yang didefinisikan oleh $h(x) = (x^2 + 4, x^3 - 2x + 6)$ adalah kontinu.
+    
+    
+    \end{tcolorbox}
+    \end{frame}

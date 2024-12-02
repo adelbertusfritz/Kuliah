@@ -1,0 +1,440 @@
+\begin{frame}{Perumuman Teorema 2.17}
+    Teorema 2.17 menyatakan basis dari topologi $\oio*{\nX_1\times\nX_2,\nT}$ adalah hasil kali setiap elemen 
+    pada masing-masing basis $\oio*{\nX_1,\nT_1}$ dan $\oio*{\nX_2,\nT_2}$.
+    \begin{tcolorbox}[enhanced,title=Teorema 2.29, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan juga $\forall \alpha \in \Lambda$, $\nB_\alpha$ adalah basis 
+        untuk $\nT_\alpha$. Maka koleksi dari semua himpunan dengan bentuk 
+        $\prod_{\alpha \in \Lambda}B_\alpha$ adalah basis untuk \textit{box topology} $\prod_{\alpha \in \Lambda}\nX_\alpha$,
+        
+        \textit{dimana} $B_\alpha\in\nB_\alpha, \forall \alpha \in \Lambda$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.29  (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\nX_\alpha,\nT_\alpha)$ adalah ruang topologi
+        \begin{enumerate}
+            \item Misalkan $\nT$ box topologi dari $\nX = \prod_{\alpha \in \Lambda}\nX_\alpha$,
+            \item Gunakan Teorema 1.11 untuk membuktikan koleksi berbentuk $\prod_{\alpha \in \Lambda}B_\alpha$ 
+            adalah basis dari $(\nX,\nT)$.
+            \item Ambil sembarang $V \in \nT$, dan $\seq*{x_\alpha} \in \nX$ dengan $\seq*{x_\alpha}\in V$.
+            \item Dari definisi \textit{box topology} $V=\bigcup\set*{\oio*{\prod_{\alpha\in\Lambda}U_\alpha}_\gamma, U_\alpha \in \nT_\alpha, \gamma \in \Lambda_V}$
+            \item Maka terdapat salah satu $\gamma_i\in\Lambda_V$ sehingga  $\seq*{x_\alpha} \in \oio*{\prod_{\alpha\in\Lambda}U_\alpha}_{\gamma_i} \subseteq V$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.29  (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{5}
+            \item Maka, $x_\alpha \in U_\alpha, \forall \alpha \in \Lambda$ 
+            \item $\nB_\alpha$ adalah basis untuk $\nT_\alpha$. Sehingga karena $U_\alpha\in \nT_\alpha$.
+            $U_\alpha = \bigcup\set*{B_\alpha, B_\alpha \in \nB'_\alpha}$.
+            \item Maka terdapat salah satu $B_\alpha \in \nB'_\alpha$ sehingga
+            $x_\alpha \in B_\alpha$ dan $B_\alpha \subseteq U_\alpha$
+            \item Poin 6-8 berlaku untuk semua $\alpha \in \Lambda$, sehingga $\seq*{x_\alpha}\in\prod_{\alpha\in\Lambda}B_\alpha$.
+            \item Untuk semua $\alpha \in \Lambda$, $B_\alpha \subseteq U_\alpha$ sehingga $\prod_{\alpha\in\Lambda}B_\alpha \subseteq \oio*{\prod_{\alpha\in\Lambda}U_\alpha}_{\gamma_i}\subseteq V$
+            \item Dengan poin 9 dan 10, maka dari Teorema 1.11, koleksi dengan bentuk $\prod_{\alpha\in\Lambda}B_\alpha$ adalah basis $(\nX,\nT)$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.30, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan juga $\forall \alpha \in \Lambda$, $\nB_\alpha$ adalah basis 
+        untuk $\nT_\alpha$. Maka koleksi $\nB$ yang terdiri dari semua himpunan dengan bentuk 
+        $\prod_{\alpha \in \Lambda}B_\alpha$ adalah basis dari untuk \textit{product topology} $\prod_{\alpha \in \Lambda}\nX_\alpha$,
+        
+        \textit{dimana} $B_\alpha=\nX_\alpha$ untuk semua kecuali beberapa
+        anggota berhingga $\beta_1,\beta_2,\dots,\beta_n\in\Lambda$ dan $B_{\beta_i}\in\nB_{\beta_i}$
+        untuk $i=1,2,\dots,n$. 
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.30 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\nX_\alpha,\nT_\alpha)$ adalah ruang topologi
+        \begin{enumerate}
+            \item Misalkan $\nT$ product topologi dari $\nX = \prod_{\alpha \in \Lambda}\nX_\alpha$,
+            \item Gunakan Teorema 1.11 untuk membuktikan koleksi berbentuk $\prod_{\alpha \in \Lambda}B_\alpha$ 
+            adalah basis dari $(\nX,\nT)$.
+            \item Ambil sembarang $V \in \nT$, dan $\seq*{x_\alpha} \in \nX$ dengan $\seq*{x_\alpha}\in V$.
+            \item Dari definisi \textit{product topology}, dengan $C$ adalah irisan berhingga $\nS$, $V=\bigcup\set*{C_\gamma, \gamma \in \Lambda_V}$
+            \item Maka terdapat salah satu $\gamma_j\in\Lambda_V$ sehingga  $\seq*{x_\alpha} \in C_{\gamma_j} \subseteq V$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.30 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{5}
+            \item Dengan definisi $\nS$ pada \textit{product topology}, maka 
+            $C_{\gamma_j}=\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(U_{\beta_i})$ dengan $U_{\beta_i}\in\nT_{\beta_i}$
+            \item Untuk setiap $\beta_i$, $\pi_{\beta_i}^{-1}(U_{\beta_i}) = \prod_{\alpha\in\Lambda/\set{\beta_i}} \nX_\alpha \times U_{\beta_i}$
+            \item Sehingga, dengan $\Lambda'=\Lambda-\set*{\beta_i,i=1,2,\dots,n}$ maka 
+            $C_{\gamma_j}=\prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n U_{\beta_i}$
+            \item Untuk $\alpha\in\Lambda$ dengan $\alpha=\beta_i$, $x_{\beta_i} \in U_{\beta_i}, i=1,2,\dots,n$ 
+            \item $\nB_{\beta_i}$ adalah basis untuk $\nT_{\beta_i}$. Sehingga karena $U_{\beta_i}\in \nT_{\beta_i}$.
+            $U_{\beta_i} = \bigcup\set*{B_{\beta_i}, B_{\beta_i} \in \nB'_{\beta_i}}$.
+            \item Maka terdapat salah satu $B_{\beta_i} \in \nB'_{\beta_i}$ sehingga
+            $x_{\beta_i} \in B_{\beta_i}$ dan $B_{\beta_i} \subseteq U_{\beta_i}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.30 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{11}
+            \item Untuk $\alpha \in \Lambda'$ pilih $B_\alpha = \nX_\alpha$ dan untuk $\alpha \in \set*{\beta_i, i=1,2,\dots,n}$ pilih
+            $B_\alpha = B_{\beta_i}$.
+            \item Sehingga $\seq*{x_\alpha}\in\prod_{\alpha\in\Lambda}B_\alpha$.
+            \item Untuk $\alpha \in \Lambda'$, $B_\alpha \subseteq \nX_\alpha$ dan untuk $\alpha \in \set*{\beta_i, i=1,2,\dots,n}$
+            $B_\alpha \subseteq U_{\alpha}$.
+            \item Sehingga $\prod_{\alpha\in\Lambda}B_\alpha \subseteq \prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n U_{\beta_i} = C_{\gamma_j} \subseteq V$
+            \item Dengan poin 13 dan 15, maka dari Teorema 1.11, koleksi dengan bentuk $\prod_{\alpha\in\Lambda}B_\alpha$ adalah basis $(\nX,\nT)$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    Teorema 2.18 menyatakan pemetaan proyeksi dari \textit{product space} adalah kontinu dan 
+    \textit{product topology} adalah topologi terkecil dimana kedua proyeksinya kontinu
+    \begin{tcolorbox}[enhanced,title=Teorema 2.31, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan juga $\nT$ adalah \textit{product} topology pada $\prod_{\alpha \in \Lambda}\nX_\alpha$ 
+        dan $\beta \in \Lambda$. Maka pemetaan proyeksi \\$\pi_\beta:\prod_{\alpha \in \Lambda}\nX_\alpha \to \nX_\beta$ kontinu.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.31 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item Ambil $U_\beta \in \nT_\beta$, Adib $\pi_{\beta}^{-1}(U_\beta)\in\nT$
+            \item Dari definisi \textit{product topology} $\pi_{\beta}^{-1}(U_\beta)\in\nS$.
+            \item Maka $\pi_{\beta}^{-1}(U_\beta)\in\nB \subseteq \nT$
+            \item Berdasarkan Teorema 1.53, $\pi_\beta$ kontinu.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    \begin{tcolorbox}[enhanced,title=Akibat 2.32, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan juga $\nT$ adalah \textit{box} topology pada $\prod_{\alpha \in \Lambda}\nX_\alpha$ 
+        dan $\beta \in \Lambda$. Maka pemetaan proyeksi \\$\pi_\beta:\prod_{\alpha \in \Lambda}\nX_\alpha \to \nX_\beta$ kontinu.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    \begin{tcolorbox}[enhanced,title=Akibat 2.32 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item Ambil $U_\beta \in \nT_\beta$, Adib $\pi_{\beta}^{-1}(U_\beta)\in\nT$
+            \item $\pi_{\beta}^{-1}(U_\beta) = \prod_{\alpha\in\Lambda/\set{\beta}} \nX_\alpha \times U_{\beta}$
+            \item Jelas $\nX_\alpha \in \nT_\alpha$
+            \item Maka dari definisi \textit{box topology} $\pi_{\beta}^{-1}(U_\beta) = \prod_{\alpha\in\Lambda/\set{\beta}} \nX_\alpha \times U_{\beta}\in \nT$
+            \item Berdasarkan Teorema 1.53, $\pi_\beta$ kontinu.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.33, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. \textit{Product topology} adalah topologi terkecil pada $\prod_{\alpha \in \Lambda}\nX_\alpha$ 
+        dimana pemetaan proyeksi \\$\pi_\beta:\prod_{\alpha \in \Lambda}\nX_\alpha \to \nX_\beta$ kontinu.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.18}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.33 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item Misalkan $\nX = \prod_{\alpha\in\Lambda} \nX_\alpha$ dan $(\nX,\nU)$ sembarang topologi dengan
+            setiap proyeksi $\pi_\beta$ kontinu untuk setiap $\beta \in \Lambda$.
+            \item Akan dibuktikan $\nT \subseteq \nU$.
+            \item Ambil sembarang $V \in \nT$ maka dengan $C$ irisan berhingga $S$ dari definisi 
+            \textit{product topology} $V=\bigcup\set*{C_\gamma,\gamma\in\Lambda_V}$
+            \item Dengan definisi $\nS$ pada \textit{product topology}, maka 
+            $C_\gamma=\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(U_{\beta_i})$ dengan $U_{\beta_i}\in\nT_{\beta_i}$
+            \item Karena untuk setiap $\beta\in\Lambda$, $\pi_\beta$ kontinu maka $\pi_{\beta_i}^{-1}(U_{\beta_i}) \in \nU$
+            \item Maka $C_\gamma \in \nU$ dan $V \in \nU$.
+            \item $\nT \subseteq \nU$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.34, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan $\nX = \prod_{\alpha \in \Lambda}\nX_\alpha$ dan $\nT$ \textit{box topology} pada $\nX$.
+        Maka $\forall \beta\in\Lambda$, pemetaan proyeksi $\pi_\beta:\nX \to \nX_\beta$ terbuka.
+    \end{tcolorbox}
+    Karena \textit{product topology} subset dari \textit{box topology}, teorema diatas juga 
+    berlaku bila $\nT$ adalah \textit{product topology} pada $\nX$.
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.17}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.34  (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item Ambil sembarang $V \in \nT$, dari definisi \textit{box topology} $V=\bigcup\set*{\oio*{\prod_{\alpha\in\Lambda}U_\alpha}_\gamma, U_\alpha \in \nT_\alpha, \gamma \in \Lambda_V}$
+            \item Maka $\pi_\beta(V) = \bigcup\set*{(U_\beta)_y, y\in\Lambda_V}$
+            \item Maka $\pi_\beta(V) \in \nT_\beta$
+            \item Dari definisi maka $\pi_\beta$ terbuka.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.35, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan $\oio*{A_\alpha,\nT_{A_\alpha}}$ subruang dari $\oio*{\nX_\alpha,\nT_\alpha}$.
+        Maka \textit{product topology} pada $\prod_{\alpha \in \Lambda}A_\alpha$ sama dengan subruang topologi 
+        $\prod_{\alpha \in \Lambda}A_\alpha$ dari \textit{product topology} $\prod_{\alpha \in \Lambda}\nX_\alpha$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.35 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\nT$ \textit{product topology} pada $\nX = \prod_{\alpha \in \Lambda}\nX_\alpha$, 
+        $\nT_A$ subruang topologi dari $(\nX,\nT)$ pada $A = \prod_{\alpha \in \Lambda}A_\alpha$, dan 
+        $\nU$ \textit{product topology} pada $A$. Akan dibuktikan $\nU = \nT_A$.
+        \begin{enumerate}
+            \item Ambil $W \in \nU$, dari definisi topologi product pada $A$
+            $W=\bigcup\set*{C_\gamma : \gamma \in \Lambda_W}$ dimana $C_\gamma$ irisan 
+            elemen subbasis $\nS$ dari definisi topologi product pada $A$.
+            \item Dengan definisi $\nS$ pada \textit{product topology} terhadap $A$, maka $\forall\gamma\in\Lambda_V,$ 
+            $C_{\gamma}=\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(U_{\beta_i})$ dengan $U_{\beta_i}\in\nT_{A_{\beta_i}}$
+            \item Untuk setiap $\beta_i$, $\pi_{\beta_i}^{-1}(U_{\beta_i}) = \prod_{\alpha\in\Lambda/\set{\beta_i}} A_\alpha \times U_{\beta_i}$
+            \item Sehingga, dengan $\Lambda'=\Lambda-\set*{\beta_i,i=1,2,\dots,n}$ maka 
+            $C_{\gamma}=\prod_{\alpha\in\Lambda'}A_\alpha\times\prod_{i=1}^n U_{\beta_i}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.35 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{5}
+            \item Dari definisi subruang topologi $(A_\alpha,\nT_{A_\alpha})$, Ada $V_{\beta_i}\in \nT_{A_{\beta_i}}$
+             sehingga $U_{\beta_i} = A_{\beta_i} \cap V_{\beta_i}$.
+            \item Maka \\
+                $C_{\gamma}=\prod_{\alpha\in\Lambda'}A_\alpha\times\prod_{i=1}^n U_{\beta_i}$\\
+            $=\prod_{\alpha\in\Lambda'}A_\alpha\times\prod_{i=1}^n A_{\beta_i}\cap V_{\beta_i}$\\
+            $=\prod_{\alpha\in\Lambda}A_\alpha\cap\oio*{\prod_{\alpha\in\Lambda'}A_\alpha\times\prod_{i=1}^n V_{\beta_i}}$\\
+            $=\prod_{\alpha\in\Lambda}A_\alpha\cap\oio*{\prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n V_{\beta_i}}$\\
+            $=A \cap \oio*{\prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n V_{\beta_i}}$\\
+            $=A\cap \oio*{\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(V_{\beta_i})}$
+            \item Karena $\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(V_{\beta_i}) \in \nT$ maka $C_\gamma = A\cap \oio*{\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(V_{\beta_i})} \in \nT_A$
+            \item Maka $W = \bigcup\set*{C_\gamma : \gamma \in \Lambda_W}\in \nT_A$ dan $\nU \subseteq \nT_A$. 
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.35 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{9}
+            \item Ambil $W\in \nT_A$, maka dari definisi subruang pada topologi product
+            $W=A\cap V$, $V\in \nT$.
+            \item Karena $V\in \nT$, dari definisi topologi product
+            $V=\bigcup\set*{D_\gamma : \gamma \in \Lambda_V}$ dimana $D_\gamma$ irisan 
+            elemen subbasis $\nS$ dari definisi topologi product pada $\nX$.
+            \item Dengan definisi $\nS$ pada \textit{product topology} terhadap $\nT$, maka $\forall\gamma\in\Lambda_V,$ 
+            $D_{\gamma}=\bigcap_{i=1}^n \pi_{\beta_i}^{-1}(V_{\beta_i})$ dengan $V_{\beta_i}\in\nT_{\beta_i}$
+            \item Untuk setiap $\beta_i$, $\pi_{\beta_i}^{-1}(V_{\beta_i}) = \prod_{\alpha\in\Lambda/\set{\beta_i}} \nX_\alpha \times V_{\beta_i}$
+            \item Sehingga, dengan $\Lambda'=\Lambda-\set*{\beta_i,i=1,2,\dots,n}$ maka 
+            $D_{\gamma}=\prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n V_{\beta_i}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.35 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{14}
+            \item Perhatikan 
+            $W=A\cap V = A\cap \oio*{\bigcup\set*{D_\gamma : \gamma \in \Lambda_V}}=\bigcup\set*{A\cap D_\gamma : \gamma \in \Lambda_V}$
+            \item Dengan memperhatikan poin 7,
+            $A\cap D_\gamma = A\cap \prod_{\alpha\in\Lambda'}\nX_\alpha\times\prod_{i=1}^n V_{\beta_i}=\prod_{\alpha\in\Lambda'}A_\alpha\times\prod_{i=1}^n A_{\beta_i}\cap V_{\beta_i}$
+            \item $A\cap D_\gamma = \bigcap_{i=1}^n \pi_{\beta_i}^{-1}(A_{\beta_i}\cap V_{\beta_i})$
+            \item $A_{\beta_i}\cap V_{\beta_i} \in \nT_{A_{\beta_i}}$ sehingga $A\cap D_\gamma \in \nU$.
+            \item Dengan demikian $W = \bigcup\set*{A\cap D_\gamma : \gamma \in \Lambda_V}\in \nU$.
+            \item $\nT_A \subseteq \nU$.
+            \item Dari poin 9 dan 20 maka $\nU = \nT_A$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.36, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan $\oio*{A_\alpha,\nT_{A_\alpha}}$ subruang dari $\oio*{\nX_\alpha,\nT_\alpha}$.
+        Maka \textit{box topology} pada $\prod_{\alpha \in \Lambda}A_\alpha$ sama dengan subruang topologi 
+        $\prod_{\alpha \in \Lambda}A_\alpha$ dari \textit{box topology} $\prod_{\alpha \in \Lambda}\nX_\alpha$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.36 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\nT$ \textit{box topology} pada $\nX = \prod_{\alpha \in \Lambda}\nX_\alpha$, 
+        $\nT_A$ subruang topologi dari $(\nX,\nT)$ pada $A = \prod_{\alpha \in \Lambda}A_\alpha$, dan 
+        $\nU$ \textit{box topology} pada $A$. Akan dibuktikan $\nU = \nT_A$.
+        \begin{enumerate}
+            \item Ambil $W \in \nU$, dari definisi topologi box pada $A$
+            $W=\bigcup\set*{\prod_{\alpha\in\Lambda} A_\alpha\cap U_\alpha : U_\alpha\in\nT_\alpha}$
+            \item $\prod_{\alpha\in\Lambda} A_\alpha\cap U_\alpha=\prod_{\alpha\in\Lambda} A_\alpha\cap \prod_{\alpha\in\Lambda} U_\alpha= A\cap\prod_{\alpha\in\Lambda} U_\alpha$
+            \item Karena $\prod_{\alpha\in\Lambda} U_\alpha\in\nT$ maka $A\cap\prod_{\alpha\in\Lambda} U_\alpha\in\nT_A$
+            \item Sehingga $W=\bigcup\set*{\prod_{\alpha\in\Lambda} A_\alpha\cap U_\alpha : U_\alpha\in\nT_\alpha}\in\nT_A$.
+            \item $\nU \subseteq \nT_A$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.20}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.36 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\addtocounter{enumi}{5}
+            \item Ambil $W\in \nT_A$, maka dari definisi subruang pada topologi box
+            $W=A\cap V$, $V\in \nT$.
+            \item Karena $V\in \nT$, dari definisi topologi box
+            $V=\bigcup\set*{\prod_{\alpha\in\Lambda} U_\alpha}$ 
+            sehingga $W=A\cap V = A\cap \oio*{\bigcup\set*{\prod_{\alpha\in\Lambda} U_\alpha}} = \bigcup\set*{A\cap\prod_{\alpha\in\Lambda} U_\alpha}$
+            \item $A\cap\prod_{\alpha\in\Lambda} U_\alpha=\prod_{\alpha\in\Lambda} A_\alpha\cap \prod_{\alpha\in\Lambda} U_\alpha=\prod_{\alpha\in\Lambda} A_\alpha\cap U_\alpha$
+            \item Karena $A_\alpha\cap U_\alpha\in\nT_{A_\alpha}$ maka $\prod_{\alpha\in\Lambda} A_\alpha\cap U_\alpha\in \nU$
+            \item $\nT_A\subseteq \nU$.
+            \item Dari poin 5 dan 10 maka $\nU = \nT_A$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.21}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.37, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{Y_\alpha,\nU_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$. Misalkan $\nU$ \textit{product topology} pada \\$Y=\prod_{\alpha \in \Lambda}Y_\alpha$ dan
+        $\oio*{\nX,\nT}$ ruang topologi dengan $f:\nX \to Y$ sebuah fungsi. Maka $f$ kontinu jika dan
+        hanya jika $\pi_\alpha \circ f$ kontinu $\forall \alpha \in \Lambda$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Perumuman Teorema 2.21}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.37 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        $(\Rightarrow)$
+        \begin{enumerate}
+            \item Asumsikan $f$ kontinu. Berdasarkan Teorema 2.31, $\pi_\alpha$ kontinu $\forall \alpha\in\Lambda$.
+            \item Berdasarkan teorema 1.56, komposisi $\pi_\alpha\circ f$ kontinu $\forall\alpha\in\Lambda$.
+        \end{enumerate}
+        $(\Leftarrow)$
+        \begin{enumerate}
+            \item Asumsikan $\pi_\alpha\circ f$ kontinu $\forall \alpha \in \Lambda$
+            \item Dari definisi topologi product, ambil sembarang elemen subbasis $S\in\nS$, maka
+            $S = \pi_\alpha^{-1}(U_\alpha)$ untuk suatu $\alpha\in\Lambda$
+            \item $f^{-1}(S) = f^{-1}(\pi_\alpha^{-1}(U_\alpha))=(\pi_\alpha\circ f)^{-1}(U_\alpha)$
+            \item Karena $\pi_\alpha\circ f$ kontinu maka $f^{-1}(S)=(\pi_\alpha\circ f)^{-1}(U_\alpha)\in\nT$
+            \item Berdasarkan Teorema 1.54, $f$ kontinu.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema 2.37 tidak berlaku pada Box Topology}
+    \begin{tcolorbox}[enhanced,title=Contoh 11, frame style tile={width=\paperwidth}{\wallpaper}]
+        Untuk setiap $i\in \N$, $Y_i=\R$. $\R^{\omega} = \prod_{i \in N}Y_i$. Misalkan $\nT$ \textit{usual topology}
+        di $\R$ dan $\nU$ \textit{box topology} pada $\R^{\omega}$. Definisikan fungsi $f:\R\to\R^{\omega}$ dengan
+        untuk setiap $x \in \R$ dan setiap $n \in \N$, $f(x)$ adalah barisan dimana nilainya pada suku ke $n$ adalah $x$. 
+        Maka untuk setiap $i \in \N$, $\pi_i \circ f$ kontinu tetapi $f$ tidak kontinu.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema 2.37 tidak berlaku pada Box Topology}
+    \begin{tcolorbox}[enhanced,title=Contoh 11 (Analisa), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item $\pi\circ f:\R \to \R$ dengan $(\pi_i\circ f)(x)=x$
+            \item maka $\pi_i\circ f$ kontinu untuk semua $i\in\N$.
+            \item Asumsikan $f$ kontinu, maka gunakan teorema 1.54 (e)
+            \item Ambil untuk setiap $i\in\N$, $B_i=\oio*{-\frac{1}{i},\frac{1}{i}}$ sehingga
+            $B=\prod_{i\in\N}B_i \in \nU$ dan $f^{-1}(B)\in \nT$ (Teo 1.54(e)).
+            \item Dari definisi $B$, maka $0\in f^{-1}(B)$.
+            \item Karena $f^{-1}B\in \nT$ usual topology, terdapat $(a,b)$ sehingga
+            $0\in(a,b)$ dan $(a,b)\subseteq f^{-1}(B)$.
+            sehingga $f(a,b)\subseteq B$
+            \item Tetapi dari definisi $B$, untuk setiap $i\in N$ didapat 
+            $\pi_i{f(a,b)}=(a,b)\subseteq \oio*{-\frac{1}{i},\frac{1}{i}}$
+            \item Kontradiksi dengan sifat Archimedean.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.38, frame style tile={width=\paperwidth}{\wallpaper}]
+        Misalkan $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$ dan $\forall \alpha \in \Lambda$ misalkan $A_\alpha \subseteq \nX_\alpha$.
+        \begin{enumerate}
+            \item Jika $A_\alpha$ subhimpunan tetutup pada $X_\alpha$, maka $\prod_{\alpha \in \Lambda}A_\alpha$ subhimpunan tertutup pada $\prod_{\alpha \in \Lambda}\nX_\alpha$
+            \item $\overline{\prod_{\alpha \in \Lambda}A_\alpha} = \prod_{\alpha \in \Lambda}\overline{A_\alpha}$
+        \end{enumerate}
+    \end{tcolorbox}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.38 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Exercise 10
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.39, frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}
+            \item $\set*{\oio*{\nX_\alpha,\nT_\alpha}:\alpha \in \Lambda}$ adalah himpunan ruang topologi
+        dengan indeks $\Lambda$
+            \item $\nT$ adalaah \textit{product topology} pada $\nX=\prod_{\alpha \in \Lambda}\nX_\alpha$
+            \item $\rho \in \nX$ dan $\beta \in \Lambda$.
+            \item $H_{\rho\beta} = \set*{x \in \nX; \text{jika } \alpha \neq \beta, x_\alpha = \rho_\alpha}$
+            \item $f:\nX_\beta \to H_{\rho\beta}$ dimana $\forall x_\beta \in \nX_\beta$, $f(x_\beta)\in H_{\rho\beta}$
+            dengan $[f(x_\beta)]_\beta=x_\beta$ dan $[f(x_\beta)]_\alpha = \rho_\alpha$ untuk $\alpha\neq\beta$.
+        \end{enumerate}
+        Maka $f$ adalah homeomorfisma
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.39 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        Definisikan $(H_{\rho\beta},\nT_H)$ subruang topologi dari $H_{\rho\beta}$.
+        \begin{enumerate}
+            \item Akan dibuktikan $f$ bijeksi, kontinu dan terbuka.
+            \item Ambil sembarang $\seq*{x_\alpha} \in H_{\rho\beta}$. 
+            \item Dari definisi $H_{\rho\beta}$ maka $x_\alpha=\rho_\alpha$ saat $\alpha\neq\beta$
+            dan $x_\beta = h_\beta$ untuk suatu $h_\beta\in\nX_\beta$.
+            \item Pilih $h_\beta\in\nX_\beta$ sehingga $f(h_\beta) = \seq*{x_\alpha}$, $f$ pada.
+            \item Asumsikan $f(x_{\beta}) = f(x'_{\beta})$.
+            \item Dari definisi $f$, $[f(x_\beta)]_\beta=x_\beta$.
+            \item Sehingga $x_{\beta} = [f(x_{\beta})]_{\beta} = [f(x'_{\beta})]_{\beta} = x'_\beta$, $f$ satu-satu.
+            \item Dari poin 4 dan 7 maka $f$ adalah bijeksi.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.39 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\setcounter{enumi}{8}
+            \item Ambil $W\in\nT_H$, maka $W = H_{\rho\beta}\cap V$ dengan $V\in\nT$.
+            \item Karena $V\in\nT$ maka $V = \bigcup\set*{C_\gamma, \gamma\in\Lambda_V}$.
+            \item Sehingga $W=\bigcup\set*{H_{\rho\beta}\cap C_\gamma, \gamma\in\Lambda_V}$.
+            \item $H_{\rho\beta}\cap C_\gamma = 
+            H_{\rho\beta}\cap \oio*{\prod_{\alpha\in\Lambda'}X_\alpha\times\prod_{i=1}^n U_{\xi_i}}$
+            \item Saat $\beta = \xi_i$ untuk suatu $i=1,2,\dots,n$, maka $H_{\rho\beta}\cap \oio*{\prod_{\alpha\in\Lambda'}X_\alpha\times\prod_{i=1}^n U_{\xi_i}}
+            =\prod_{\alpha\in\Lambda/\set{\beta}}\set{\rho_\alpha}\times U_{\beta}$
+            \item Saat $\beta \in \Lambda'$, maka $H_{\rho\beta}\cap \oio*{\prod_{\alpha\in\Lambda'}X_\alpha\times\prod_{i=1}^n U_{\xi_i}}
+            =\prod_{\alpha\in\Lambda/\set{\beta}}\set{\rho_\alpha}\times \nX_{\beta}$
+            \item Maka $W=\bigcup\set*{\text{bentuk } 13 \text{ atau }\text{bentuk }14}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Teorema Product Topology}
+    \begin{tcolorbox}[enhanced,title=Teorema 2.39 (Bukti), frame style tile={width=\paperwidth}{\wallpaper}]
+        \begin{enumerate}\setcounter{enumi}{15}
+            \item $f^{-1}(W) = \bigcup\set{R_{\beta_\gamma}, \gamma\in\Lambda_V}$ dimana
+            $R_{\beta_\gamma}=U_{\beta_\gamma}$ untuk $\beta_\gamma = \xi_{i\gamma}$ dan
+            $R_{\beta_\gamma}=X_{\beta_\gamma}$ untuk $\beta_\gamma \in \Lambda'_\gamma$.
+            \item Maka $f^{-1}(W) \in \nT_\beta$, dengan Teorema 1.53, $f$ kontinu.
+            \item Ambil $W \in \nT_\beta$, maka $f(W) = H_{\rho\beta}\cap\pi_\beta^{-1}(W)$
+            \item Karena $\pi_\beta^{-1}(W)\in\nT$ maka $f(W)\in \nT_H$.
+            \item Berdasarkan definisi fungsi buka, $f$ buka.
+            \item Dari poin 8, 17 dan 20 maka $f$ adalah homeomorfisma.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}

@@ -1,0 +1,44 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,calc}
+\RequirePackage{graphicx}
+
+\RequirePackage[sfdefault]{noto}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tikzpagenodes}
+
+% Settings
+\def\wallpaper{wallpaper.jpg}
+\makeatletter
+\newtcolorbox{blur}[1][]{%
+  #1,
+  enhanced,
+  remember,
+  frame hidden,
+  interior hidden,
+  fonttitle=\bfseries, 
+  coltitle=black,
+  underlay={
+    \begin{tcbclipframe}
+      \begin{scope}[remember picture,overlay,inner sep=0pt]
+        \fill[black] (current page.south west) rectangle (current page.north east);
+        \foreach \x in {-10,-7.5,...,10}{
+        \foreach \y in {-10,-7.5,...,10}{
+          \node[opacity=0.1] at ([yshift=\y,xshift=\x]current page.center) {\includegraphics[height=\paperheight]{\wallpaper}};
+        }}
+      \end{scope}
+    \end{tcbclipframe}
+   }
+}
+\makeatother
+\useinnertheme{fritz}
+\useoutertheme{fritz}
+\usecolortheme{fritz}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\mode<all>
