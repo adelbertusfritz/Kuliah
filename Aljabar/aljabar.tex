@@ -1,0 +1,126 @@
+% ===== Setup Page Layout =====
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={15cm, 20cm},
+ }
+\usepackage{graphicx}
+\input{packages.tex}
+
+\title{Responsi 4}
+\author{Fritz Adelbertus Sitindaon}
+\date{}
+
+\begin{document}
+\begin{flushright}
+    \section*{Responsi 4 Analisis 1}
+    \textbf{Tim Asisten Dosen}
+\end{flushright}
+
+
+\vspace{0.5cm}\hrule height 2pt\vspace{0.5cm}
+
+
+
+\section{Konfigurasi Rubik}
+
+Konfigurasi rubik akan dinyatakan dalam suatu notasi Grup sehingga dapat dihubungkan
+dengan Grup Rubik $\vct{F,L,U,D,R,B}$. Konfigurasi rubik dapat disusun dari 
+5 grup.
+\begin{enumerate}
+    \item Orientasi sudut rubik ($C_3$), terdiri dari 3 permutasi yaitu $C_3=\set{e,(123),(132)}$. \input{figur_rubik/konfigurasi_rubik_1}
+    \item Orientasi sisi rubik ($C_2$), terdiri dari 2 permutasi yaitu $C_2=\set{e,(12)}$.\input{figur_rubik/konfigurasi_rubik_2}
+    \item Orientasi tengah ($C_4$), terdiri dari 4 permutasi yaitu $C_4=\set{e,(1234),(1432),(13)(24)}$ \input{figur_rubik/konfigurasi_rubik_3}
+    \item Posisi sudut rubik ($S_8$), adalah grup simetri 8 \input{figur_rubik/konfigurasi_rubik_4}
+    \item Posisi sisi rubik ($S_{12}$), adalah grup simetri 12 \input{figur_rubik/konfigurasi_rubik_5}
+\end{enumerate}
+Menggabungkan 5 grup ini akan menghasilkan semua kemungkinan konfigurasi rubik.
+
+\subsection{Direct Product}
+
+\begin{definition}
+    Misalkan $G_1, G_2$ adalah grup. \textbf{Direct product} dari $G_1$ dan $G_2$ adalah
+    himpunan $G_1\times G_2$ dengan operasi $(g_1,g_2)\cdot(g'_1,g'_2) = (g_1g'_1,g_2g'_2)$ dengan $g_1,g'_1\in G_1$ 
+    dan $g_2,g'_2\in G_2$.
+\end{definition}
+
+\noindent Rubik memiliki 8 sudut dan masing-masing memiliki orientasi sudut yang saling bebas. 8 
+grup $C_3$ ini digabung dengan \textbf{direct product}, untuk menghasilkan 
+$\underbrace{C_3\times C_3\dots\times C_3}_\text{8 kali}= C_3^8$.\\
+Dengan cara yang serupa, memerhatikan orientasi sisi dan tengah akan menghasilkan $C_2^{12}$ dan $C_4^6$ 
+secara berturut-turut. 
+
+Telah digabungkan semua kemungkinan orientasi pada masing-masing komponen rubik (sudut, sisi, tengah).
+Sekarang akan digabungkan orientasi tersebut dengan posisi.
+
+\subsection{Wreath Product}
+
+% \begin{definition}
+%     Misalkan $G_1\times G_2$ adalah subgrup. Maka $A=G_1\rtimes G_2$ adalah \textbf{semi-direct product}
+%     jika
+%     \begin{enumerate}
+%         \item $A=G_1G_2$
+%         \item $G_1\cap G_2= e_A
+%     \end{enumerate}
+% \end{definition}
+
+\begin{definition}
+    Misalkan $X$ himpunan berhingga, $G$ grup dan $H$ grup yang \textbf{beraksi} pada $X$. Tetapkan 
+    label untuk $X$ seperti $\set{x_1,x_2,\dots,x_t}$, dengan $|X|=t$. Lalu misalkan $G^t$ 
+    adalah \textbf{direct product} dari $G$ terhadap dirinya sebanyak $t$ kali. $G^t\wr H = G \rtimes H$
+    adalah \textbf{wreath product} dengan $H$ beraksi pada $G^t$ menurut aksinya terhadap $X$.
+\end{definition}
+
+Wreath product dari direct product dengan suatu grup simetri $S_n$ akan membentuk semua kemungkinan 
+posisi dari direct product. Dengan wreath product, kemungkinan orientasi sudut dan posisi sudut dapat digabung 
+dengan notasi $C_3^8\wr S_8$. Begitu juga dengan orientasi dan posisi dari sisi digabung dengan notasi 
+$C_2^{12}\wr S_{12}$. Karena bagian tengah tidak berpindah posisi, maka akan tetap berbentuk $C_4^6$. 
+Terakhir karena konfigurasi rubik pada bagian tengah, sisi dan sudut saling bebas maka dapat 
+digabung dengan \textbf{direct product}
+
+\begin{lemma}
+    $C_3^8\wr S_8 \times C_2^{12}\wr S_{12}\times C_4^6$ membentuk grup konfigurasi rubik.
+\end{lemma}
+
+\section{Sistem Penomoran}
+Perhatikan penetapan sistem penomoran pada rubik ini.
+\input{figur_rubik/penomoran.tex}
+Bilangan orientasi dari suatu sudut, sisi, tengah pada suatu konfigurasi rubik adalah selisih 
+modular terhadap konfigurasi awal seperti pada gambar di atas.
+
+\begin{lemma}
+    Setiap gerakan $m \in \set{F,L,R,B}$, bilangan orientasi pada sudut yang berputar akan 
+    berubah sebanyak $1\Mod 3$ atau $2\Mod 3$, dan $m\in \set{U,D}$ bilangan orientasi tidak berubah $(0\Mod 3)$.
+\end{lemma}
+
+\begin{lemma}
+    Setiap gerakan $m \in \set{F,L,U,D,R,B}$, bilangan orientasi pada sisi yang berputar akan 
+    berubah sebanyak $1\Mod 2$.
+\end{lemma}
+
+\begin{lemma}
+    Setiap gerakan $m \in \set{F,L,U,D,R,B}$, bilangan orientasi pada tengah yang berputar akan 
+    berubah sebanyak $0\Mod 2$ atau $1\Mod 2$.
+\end{lemma}
+
+Pada penjelasan selanjutnya, setiap pengambilan elemen dari $C_3^8,\,C_2^{12}$ atau $C_4^6$ akan dipetakan
+ke bilangan orientasi masing-masing.
+
+\section{Teorema Fundamental Rubik Pertama}
+Permasalahan bisa tidaknya suatu konfigurasi rubik diselesaikan menghasilkan teorema 
+pertama pada grup Rubik yang menunjukan syarat cukup untuk menentukan \textit{solveability} dari suatu konfigurasi rubik.
+\begin{theorem}
+    Misalkan $u \in C_4^6,\,v\in C_3^8,\,w\in C_2^{12},\,r\in S_8,\,s\in S_{12}$. $(u,v,w,r,s)$ dapat 
+    direpresentasikan dalam satu elemen $g \in \vct{F,L,U,D,R,B}$ (grup Rubik) jika dan hanya jika:
+    \begin{enumerate}
+        \item $sgn(r)=sgn(s)$
+        \item $sgn(r)=sgn(
+            s) = 1 \iff u_1+u_2+\dots+u_6=0\Mod 2$
+        \item $v_1+v_2+\dots+v_8 = 0\Mod 3$
+        \item $w_1+w_2+\dots+w_{12} = 0\Mod 2$
+    \end{enumerate}
+\end{theorem}
+
+
+\end{document}

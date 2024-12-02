@@ -1,0 +1,105 @@
+\begin{frame}{Tychonoff Space}
+    \begin{block}{Teorema 5.19}
+        Misalkan $\set*{(\mcX_\alpha,\mcT_\alpha):\alpha\in\Lambda}$ adalah kumpulan topologi dan $\mcX=\prod_{\alpha\in\Lambda}\mcX_\alpha$. 
+        Maka $(\mcX,\mcT)$ ruang Tycho jika dan hanya jika $(\mcX_\alpha,\mcT_\alpha)$ adalah ruang Tycho untuk setiap $\alpha\in\Lambda$.
+    \end{block}
+    Bukti: $(\Rightarrow)$
+    \begin{enumerate}
+        \item Misalkan $(\mcX,\mcT)$ adalah ruang Tycho. Definisikan subruang dari $X$
+        sebagai $H_{\rho\beta}$ seperti pada teorema 2.39 (product topology).
+        \item Maka $H_{\rho\beta}$ homeomorfis dengan $X_\beta$.
+        \item Karena ruang Tycho adalah sifat topologi (Exercise 6) dan setiap 
+        subruang dari ruang Tycho adalah Tycho (Exercise 7), maka $X_\beta$ Tycho.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Tychonoff Space}
+    Bukti: $(\Leftarrow)$
+    \begin{enumerate}
+        \item Misalkan $C\subset X$ tertutup dan $p\in \mcX-C$. 
+        \item Karena $X-C$ buka maka $p \in \bigcap_{i=1}^n \pi_{\beta_i}^{-1}(U_{\beta_i}) \subseteq \mcX-C$
+        \\($p$ elemen salah satu $B$ elemen dari basis).
+        \item Karena $(\mcX_\alpha,\mcT_\alpha)$ Tycho untuk semua $\alpha\in\Lambda$, terdapat fungsi kontinu
+        $f_i:X_{\beta_i} \to I$ dengan $f_i(p_{\beta_i})=1$ dan $f_i(y_{\beta_i})=0$ untuk semua $y_{\beta_i}\in \mcX_{\beta_i}-U_{\beta_i}$
+        untuk $i=1,2,\dots,n$.
+        \item Definisikan $f:\mcX\to I$ dengan $f(x)=\min\set{f_i{x_{\beta_i}}: i=1,2,\dots,n}$
+        \item Maka $f(p)=1$ dana $f(x)=0$ untuk semua $x\in \mcX-C$
+        \item Dan $f$ juga kontinu (Exercise 8)
+        \item Maka $(\mcX,\mcT)$ adalah ruang Tycho.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Tychonoff Space}
+    \begin{block}{Exercise 6}
+        Tycho adalah sifat topologi
+        \begin{enumerate}
+            \item Misalkan $(\mcX,\mcT), (\mcY,\mcU)$ adalah ruang topologi
+            dan $f: \mcX\to\mcY$ adalah homeomorfisma. Misalkan pula $(\mcX,\mcT)$ 
+            adalah ruang Tycho. Adib $(\mcY,\mcU)$ adalah ruang Tycho.
+            \item Ambil sembarang subset tutup $C\subset \mcY$ dan $p\in\mcY-C$.\\
+            Akan dibentuk fungsi kontinu $h:\mcY \to I$ dimana $h(p)=1$ dan $h(y)=0$ untuk setiap $y\in C$.
+            \item Karena $f$ kontinu (homeo) maka $f^{-1}(C)$ subset tutup $\mcX$.
+            \item Karena $f$ bijeksi (homeo) maka $f^{-1}(p)\in X-f^{-1}(C)$.
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Tychonoff Space}
+    \begin{block}{Exercise 6}
+        Tycho adalah sifat topologi
+        \begin{enumerate}\setcounter{enumi}{4}
+            \item Karena $X$ Tycho maka terdapat fungsi kontinu $g:\mcX\to I$ sehingga
+            $g(f^{-1}(p))=1$ dan $g(x)=0$ untuk semua $x\in f^{-1}(C)$.
+            \item karena $g$ dan $f^{-1}$ kontinu (homeo) maka definisikan fungsi kontinu
+             $h:\mcY \to I$ dengan $h(y)=g\circ f^{-1}(y)$
+            \item $h$ adalah fungsi kontinu dimana $h(p) = g(f^{-1}(p))=1$ dan $h(y)=g(f^{-1}(y))=0$ untuk semua $y\in C$.        
+            \item maka $(\mcY,\mcU)$ ruang Tycho, Tycho adalah sifat topologi
+        \end{enumerate}      
+    \end{block}
+\end{frame}
+
+\begin{frame}{Tychonoff Space}
+    \begin{block}{Exercise 7}
+        Setiap subruang dari ruang Tycho adalah Tycho
+        \begin{enumerate}
+            \item Misalkan $(\mcX,\mcT), (\mcY,\mcU)$ adalah ruang Tycho. 
+            Ambil sembarang $A \subseteq \mcX$. Adib $(\mcA,\mcT_A)$ adalah ruang Tycho.
+            \item Ambil sembarang subset tutup $C\subset A$ dan $p\in A-C$.\\
+            Akan dibentuk fungsi kontinu $h:A \to I$ dimana $h(p)=1$ dan $h(x)=0$ untuk setiap $x\in C$.
+            \item Dari teorema 2.13 (a) fungsi inklusi $i:A\to \mcX, i(x)=x$ adalah fungsi kontinu
+            \item Dari teorema 2.5 karena $C$ tertutup di $A$ terdapat $D$ subset tutup di $(\mcX,\mcT)$
+            sehingga $C=A\cap D$.
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Tychonoff Space}
+    \begin{block}{Exercise 7}
+        Setiap subruang dari ruang Tycho adalah Tycho
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item Perhatikan hubungan $p,C,$ dan $D$. $\forall x\in C$ jelas $x\in D$ 
+            dan karena $p \in A-C$ maka $p\notin D$.
+            \item Karena $X$ Tyhco maka terdapat fungsi kontinu $g:\mcX \to I$ sehingga $g(p)=1$ dan $g(x)=0$
+            untuk semua $x \in D$.
+            \item Dengan demikian definisikan fungsi kontinu $h:A\to I$ dengan $h(x)=g\circ i(x)$.
+            \item $h$ adalah fungsi kontinu dimana $h(p) = g(i(p))=g(p)=1$ dan $h(x)=g(i(x))=0$ untuk semua $x\in C$.        
+            \item maka $(\mcA,\mcT_A)$ ruang Tycho.
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Contoh}
+    \begin{block}{Contoh 6}
+        Misalkan $\mcX = \set{(x,y)\in \R^2:y\geq 0}\cup\set{(0,-1)}$. Definisikan koleksi $\mcB$ sebagai berikut:
+        \begin{enumerate}
+            \item Untuk $y > 0$, $\set{(x,y)}\in\mcB$.
+            \item $(M_x\cup N_x)-P_x \in \mcB$\\
+            $M_x=\set{(x,y):0\leq y \leq 2}$\\
+            $N_x=\set{(x+y,y):0\leq y \leq 2}$\\
+            $P_x\subseteq M_x\cup N_x-\set{(x,0)}$, $P_x$ berhingga.
+            \item $\set{(x,y)\in \mcX, x > n}\in \mcB$ untuk $n\in\N$
+        \end{enumerate}
+        $\mcB$ basis untuk suatu topologi $\mcT$ di $\mcX$. $(\mcX,\mcT)$ ruang regular tetapi bukan ruang Tycho.
+    \end{block}
+\end{frame}

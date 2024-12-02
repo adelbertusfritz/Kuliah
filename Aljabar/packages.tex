@@ -1,0 +1,90 @@
+% ===== Setup Font =====
+\usepackage[sfdefault,lf]{carlito}
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+
+% ==== Import Math Packages =====
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Akibat}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definisi}
+
+% ==== Import Styling Packages =====
+\usepackage{enumitem}
+\usepackage[pages=some, placement=bottom]{background}
+\usepackage{moresize}
+\usepackage{relsize}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
+\usepackage{verbatim}
+\usepackage[normalem]{ulem}
+
+\usepackage{hyperref}
+
+% ==== Custom Declarations =====
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\cic{[ }{] }
+\DeclarePairedDelimiter\oic{( }{] }
+\DeclarePairedDelimiter\cio{[ }{) }
+\DeclarePairedDelimiter\oio{( }{) }
+\DeclarePairedDelimiter\set{\{ }{\} }
+\DeclarePairedDelimiter\brk{(}{)}
+\DeclarePairedDelimiter\vct{\langle}{\rangle}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\drv}[2]{\frac{d}{d#1}\brk*{#2}}
+\newcommand{\drvL}[2]{D_{#1}\brk*{#2}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\eval}[3]{\left.\brk*{#1}\right\rvert_{#2}^{#3}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rubik}{
+    \draw[black, thick] (0,0) -- (2.598,1.5);
+    \draw[black, thick] (0,0) -- (-2.598,1.5);
+    \draw[black, thick] (0,0) -- (0,-3);
+    \draw[black, thick] (0,-3) -- (2.598,-1.5);
+    \draw[black, thick] (0,-3) -- (-2.598,-1.5);
+    \draw[black, thick] (0,-2) -- (2.598,-0.5);
+    \draw[black, thick] (0,-2) -- (-2.598,-0.5);
+    \draw[black, thick] (0,-1) -- (2.598,0.5);
+    \draw[black, thick] (0,-1) -- (-2.598,0.5);
+    \draw[black, thick] (2.598,-1.5) -- (2.598,1.5);
+    \draw[black, thick] (-2.598,-1.5) -- (-2.598,1.5);
+    \draw[black, thick] (0,3) -- (2.598,1.5);
+    \draw[black, thick] (0,3) -- (-2.598,1.5);
+    \draw[black, thick] (0.867,0.5) -- (0.867,-2.5);
+    \draw[black, thick] (1.732,1) -- (1.732,-2);
+    \draw[black, thick] (-0.867,0.5) -- (-0.867,-2.5);
+    \draw[black, thick] (-1.732,1) -- (-1.732,-2);
+    \draw[black, thick] (-0.867,0.5) -- (1.732,2);
+    \draw[black, thick] (-1.732,1) -- (0.867,2.5);
+    \draw[black, thick] (0.867,0.5) -- (-1.732,2);
+    \draw[black, thick] (1.732,1) -- (-0.867,2.5);
+}
+
+\newcommand{\RubikU}{
+    \draw[black, thick] (0,0) -- (2.598,1.5);
+    \draw[black, thick] (0,0) -- (-2.598,1.5);
+    \draw[black, thick] (0,3) -- (0,6);
+    \draw[black, thick] (0,6) -- (2.598,4.5);
+    \draw[black, thick] (0,6) -- (-2.598,4.5);
+    \draw[black, thick] (0,4) -- (2.598,2.5);
+    \draw[black, thick] (0,4) -- (-2.598,2.5);
+    \draw[black, thick] (0,5) -- (2.598,3.5);
+    \draw[black, thick] (0,5) -- (-2.598,3.5);
+    \draw[black, thick] (2.598,4.5) -- (2.598,1.5);
+    \draw[black, thick] (-2.598,4.5) -- (-2.598,1.5);
+    \draw[black, thick] (0,3) -- (2.598,1.5);
+    \draw[black, thick] (0,3) -- (-2.598,1.5);
+    \draw[black, thick] (0.867,5.5) -- (0.867,2.5);
+    \draw[black, thick] (1.732,5) -- (1.732,2);
+    \draw[black, thick] (-0.867,2.5) -- (-0.867,5.5);
+    \draw[black, thick] (-1.732,2) -- (-1.732,5);
+    \draw[black, thick] (-0.867,0.5) -- (1.732,2);
+    \draw[black, thick] (-1.732,1) -- (0.867,2.5);
+    \draw[black, thick] (0.867,0.5) -- (-1.732,2);
+    \draw[black, thick] (1.732,1) -- (-0.867,2.5);
+}
